@@ -9,17 +9,10 @@ const About = React.createClass({
         styleContent: PropTypes.object.isRequired
     },
 
-    getInitialState: function(){
-        return {
-            height: 0,
-        };
-    },
-
     componentDidMount: function(){
-        if(this.props.counter){
+        if(this.props.initialCalculate){
             const height = this.div.clientHeight;
-            console.log("11" + height);
-            this.props.handleCount(height);
+            this.props.calculateHeight(height,"about");
         }
     },
 

@@ -16,7 +16,7 @@ class App extends Component {
     styleContent: {
       transformOrigin: '0 300px 300px'
     },
-    count: true
+    calculate: true
   };
 
   turnToAbout = e => {
@@ -47,15 +47,23 @@ class App extends Component {
     });
   };
 
-  countHeight = (height) => {
-    console.log("about: " + height);
+  countHeight = (height, componentName) => {
+    // console.log(componentName + height);
+    switch(componentName){
+      case "about":
+        this.setState({
+          about: height
+        });
+        break;
+    }
+
   }
 
   componentDidMount = function(){
 
     this.setState({
       displayAbout: false,
-      count: false
+      calculate: false
     });
   }
   
@@ -75,8 +83,8 @@ class App extends Component {
           {this.state.displayAbout ? <About 
             handleTurn={this.turnToSkill} 
             styleContent={this.state.styleContent} 
-            counter={this.state.count} 
-            handleCount={this.countHeight}/> : null }
+            initialCalculate={this.state.calculate} 
+            calculateHeight={this.countHeight}/> : null }
           {this.state.displaySkill ? <Skill 
             handleTurn={this.turnToLink} 
             styleContent={this.state.styleContent}/> : null }
