@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import HomePage from './HomePage';
@@ -9,12 +10,13 @@ import Link from './Link';
 class App extends Component {
   state = {
     displayHome: true,
-    displayAbout: false,
+    displayAbout: true,
     displaySkill: false,
     displayLink: false,
     styleContent: {
       transformOrigin: '0 300px 300px'
-    }
+    },
+    count: true
   };
 
   turnToAbout = e => {
@@ -45,6 +47,19 @@ class App extends Component {
     });
   };
 
+  countHeight = (height) => {
+    console.log("about: " + height);
+  }
+
+  componentDidMount = function(){
+
+    this.setState({
+      displayAbout: false,
+      count: false
+    });
+  }
+  
+
   render() {
     return (
       <div className="App">
@@ -59,7 +74,9 @@ class App extends Component {
             styleContent={this.state.styleContent}/> : null }
           {this.state.displayAbout ? <About 
             handleTurn={this.turnToSkill} 
-            styleContent={this.state.styleContent}/> : null }
+            styleContent={this.state.styleContent} 
+            counter={this.state.count} 
+            handleCount={this.countHeight}/> : null }
           {this.state.displaySkill ? <Skill 
             handleTurn={this.turnToLink} 
             styleContent={this.state.styleContent}/> : null }
