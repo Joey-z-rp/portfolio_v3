@@ -11,7 +11,10 @@ class App extends Component {
     displayHome: true,
     displayAbout: false,
     displaySkill: false,
-    displayLink: false
+    displayLink: false,
+    styleContent: {
+      transformOrigin: '0 300px 300px'
+    }
   };
 
   turnToAbout = e => {
@@ -51,10 +54,18 @@ class App extends Component {
           transitionEnterTimeout={1000} 
           transitionLeaveTimeout={1000}>
 
-          {this.state.displayHome ? <HomePage handleTurn={this.turnToAbout}/> : null }
-          {this.state.displayAbout ? <About handleTurn={this.turnToSkill}/> : null }
-          {this.state.displaySkill ? <Skill handleTurn={this.turnToLink}/> : null }
-          {this.state.displayLink ? <Link handleTurn={this.turnToHome}/> : null }
+          {this.state.displayHome ? <HomePage 
+            handleTurn={this.turnToAbout} 
+            styleContent={this.state.styleContent}/> : null }
+          {this.state.displayAbout ? <About 
+            handleTurn={this.turnToSkill} 
+            styleContent={this.state.styleContent}/> : null }
+          {this.state.displaySkill ? <Skill 
+            handleTurn={this.turnToLink} 
+            styleContent={this.state.styleContent}/> : null }
+          {this.state.displayLink ? <Link 
+            handleTurn={this.turnToHome} 
+            styleContent={this.state.styleContent}/> : null }
 
         </ReactCSSTransitionGroup>
       </div>

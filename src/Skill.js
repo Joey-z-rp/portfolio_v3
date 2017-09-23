@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Skill = props => {
     return (
-        <div className="skill">
+        <div className="skill" style={props.styleContent}>
             <h1>This is skill page.</h1>
             <h1>This is skill page.</h1>
             <h1>This is skill page.</h1>
@@ -19,6 +19,7 @@ const Skill = props => {
 
 Skill.ProtoTypes = {
     handleTurn: PropTypes.func.isRequired,
+    styleContent: PropTypes.object.isRequired
 };
 
 export default Skill;

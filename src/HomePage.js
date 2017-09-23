@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const sty = {
-    transformOrigin: '0 300px 300px'
-};
 
 const HomePage = props => {
     return (
-        <div className="home" style={sty}>
+        <div className="home" style={props.styleContent}>
             <h1 >This is home page.</h1>
             <h1 >This is home page.</h1>
             <h1 >This is home page.</h1>
@@ -22,6 +19,7 @@ const HomePage = props => {
 
 HomePage.ProtoTypes = {
     handleTurn: PropTypes.func.isRequired,
+    styleContent: PropTypes.object.isRequired
 };
 
 
