@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react';
 import PropTypes from 'prop-types';
+import Typist from 'react-typist';
 
 
 const HomePage = React.createClass({
@@ -138,6 +139,13 @@ const HomePage = React.createClass({
     render: function(){
         return (
             <div className="home" style={this.props.styleContent} ref={ (div) => this.div = div}>
+                <Typist 
+                    className="typing-animation"
+                    startDelay={2000} 
+                    avgTypingDelay={150} 
+                    stdTypingDelay={60} >
+                    Hello there!
+                </Typist>
                 <canvas ref={(can) => {this.canvas = can}}>Sorry! Your browser does not support canvas.</canvas>
                 <button onClick={this.props.handleTurn}>Turn</button>
             </div>
