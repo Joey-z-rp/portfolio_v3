@@ -7,8 +7,22 @@
   transform-style: preserve-3d;
   transition: transform 1s ease-in-out; }
 
-.home .typing-animation {
-  font-size: 2rem; }
+.home {
+  background-color: #000;
+  color: #fff; }
+  .home .typing-animation-1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem; }
+  .home .typing-animation-2 {
+    position: absolute;
+    top: 5rem;
+    font-size: 2rem; }
+  .home button {
+    position: absolute;
+    top: 50%;
+    left: 0; }
 
 .about {
   height: 600px;

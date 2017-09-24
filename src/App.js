@@ -15,6 +15,8 @@ class App extends Component {
     styleContent: {
       transformOrigin: `${window.innerWidth / 2 - 10}px 0 ${window.innerWidth / 2 - 10}px`
     },
+    windowWidth: window.innerWidth,
+    windowHeight: window.innerHeight,
   };
 
 
@@ -50,6 +52,8 @@ class App extends Component {
   componentDidMount = function(){
     window.onresize = function(){
       this.setState({
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
         styleContent: {
           transformOrigin: `${window.innerWidth / 2 - 10}px 0 ${window.innerWidth / 2 - 10}px`
         }
@@ -70,14 +74,12 @@ class App extends Component {
 
           {this.state.displayHome ? <HomePage 
             handleTurn={this.turnToAbout} 
-            styleContent={this.state.styleContent} 
-            initialCalculate={this.state.calculate} 
-            calculateHeight={this.countHeight}/> : null }
+            styleContent={this.state.styleContent}  
+            width={this.state.windowWidth} 
+            height={this.state.windowHeight} /> : null }
           {this.state.displayAbout ? <About 
             handleTurn={this.turnToSkill} 
-            styleContent={this.state.styleContent} 
-            initialCalculate={this.state.calculate} 
-            calculateHeight={this.countHeight}/> : null }
+            styleContent={this.state.styleContent} /> : null }
           {this.state.displaySkill ? <Skill 
             handleTurn={this.turnToLink} 
             styleContent={this.state.styleContent}/> : null }
