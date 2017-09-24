@@ -160,7 +160,7 @@ const HomePage = React.createClass({
                 <HomePageBackground width={this.props.width} height={this.props.height}/>
                 { this.state.showButton ? 
                     <div className="button-wrapper">
-                        <button className="yes" onClick={this.props.handleTurn}>Yes, please.</button>
+                        <button className="yes" onClick={() => {this.props.handleTurn("home", "about")}}>Yes, please.</button>
                         <button className="no" onClick={this.goodbye}>No, thanks.</button>
                     </div>
                      : null }

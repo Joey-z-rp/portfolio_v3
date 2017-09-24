@@ -21,32 +21,63 @@ class App extends Component {
 
 
 
-  turnToAbout = e => {
-    this.setState({
-      displayAbout: true,
-      displayHome: false
-    });
-  };
+  // turnToAbout = e => {
+  //   this.setState({
+  //     displayAbout: true,
+  //     displayHome: false
+  //   });
+  // };
 
-  turnToSkill = e => {
-    this.setState({
-      displayAbout: false,
-      displaySkill: true
-    });
-  };
+  // turnToSkill = e => {
+  //   this.setState({
+  //     displayAbout: false,
+  //     displaySkill: true
+  //   });
+  // };
 
-  turnToLink = e => {
-    this.setState({
-      displayLink: true,
-      displaySkill: false
-    });
-  };
+  // turnToLink = e => {
+  //   this.setState({
+  //     displayLink: true,
+  //     displaySkill: false
+  //   });
+  // };
 
-  turnToHome = e => {
-    this.setState({
-      displayLink: false,
-      displayHome: true
-    });
+  // turnToHome = e => {
+  //   this.setState({
+  //     displayLink: false,
+  //     displayHome: true
+  //   });
+  // };
+
+  turnTo = (currentPage, nextPage) => {
+    switch(currentPage){
+      case "home":
+        this.setState({displayHome: false});
+        break;
+      case "about":
+        this.setState({displayAbout: false});
+        break;
+      case "skill":
+        this.setState({displaySkill: false});
+        break;
+      case "link":
+        this.setState({displayLink: false});
+        break;
+    };
+    switch(nextPage){
+      case "home":
+        this.setState({displayHome: true});
+        break;
+      case "about":
+        this.setState({displayAbout: true});
+        break;
+      case "skill":
+        this.setState({displaySkill: true});
+        break;
+      case "link":
+        this.setState({displayLink: true});
+        break;
+    };
   };
 
   componentDidMount = function(){
@@ -73,7 +104,7 @@ class App extends Component {
           transitionLeaveTimeout={1000}>
 
           {this.state.displayHome ? <HomePage 
-            handleTurn={this.turnToAbout} 
+            handleTurn={this.turnTo} 
             styleContent={this.state.styleContent}  
             width={this.state.windowWidth} 
             height={this.state.windowHeight} /> : null }
