@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Indie Flower', cursive;
 }
 
 .home, .about, .skill, .link {
@@ -13,37 +19,74 @@
 .home {
     background-color: #000;
     color: #fff;
+    font-size: 3rem;
+
+    .typing-animation {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     .typing-animation-1 {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2rem;
+        top: 7rem;
+        line-height: 5rem;
     }
     .typing-animation-2 {
-        position: absolute;
-        top: 5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2rem;
+        top: 10rem;
+        line-height: 8rem;
+        font-size: 3.5rem;
     }
     .typing-animation-3 {
-        position: absolute;
-        top: 5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2rem;
+        top: 10rem;
+        font-size: 4rem;
+    }
+    .typing-animation-4 {
+        top: 50%;
+        transform: translate(-50%, -100%);
+        font-size: 4rem;
     }
 
-    .yes {
+    .button-wrapper {
+        width: 100%;
         position: absolute;
-        top: 50%;
-        left: 0; 
-    }
-    .no {
-        position: absolute;
-        top: 50%;
-        left: 50%; 
+        bottom: 30%;
+        display: flex;
+        justify-content: space-around;
+
+        button {
+            display: inline-block;
+            border-radius: 9px;
+            width: 15rem;
+            height: 5rem;
+            font-family: 'Indie Flower', cursive;
+            font-size: 2rem;
+            background-color: #2B8AE9;
+            cursor: pointer;
+        }
+        
+        .yes{
+            position: relative;
+        }
+        .yes:hover {
+            background-color: #24D62D;
+        }
+        .yes::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-image: url(./images/finger.png);
+            background-size: cover;
+            position: absolute;
+            left: -60px;
+            top: 0;
+            animation: pointing 1s infinite linear;
+        }
+
+        .no:hover {
+            background-color: #C7112F;
+        }
     }
 }
 
@@ -88,15 +131,30 @@
 
 
 .Typist .Cursor {
-    display: inline-block; }
-    .Typist .Cursor--blinking {
-      opacity: 1;
-      animation: blink 1.2s linear infinite; }
-  
-  @keyframes blink {
+    display: inline-block; 
+}
+.Typist .Cursor--blinking {
+    opacity: 1;
+    animation: blink 1.2s linear infinite; 
+}
+
+@keyframes blink {
     0% {
-      opacity: 1; }
+        opacity: 1; }
     50% {
-      opacity: 0; }
+        opacity: 0; }
     100% {
-      opacity: 1; } }
+        opacity: 1; } 
+}
+
+@keyframes pointing {
+    0% {
+        transform: translateX(-30px);
+    }
+    70% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-30px);
+    }
+}

@@ -57,10 +57,10 @@ const HomePage = React.createClass({
         return (
             <div className="home" style={this.props.styleContent} ref={ (div) => this.div = div}>
                 { this.state.typing1 ? <Typist 
-                    className="typing-animation-1"
+                    className="typing-animation-1 typing-animation"
                     startDelay={2000} 
                     avgTypingDelay={50} 
-                    stdTypingDelay={60} 
+                    stdTypingDelay={120} 
                     cursor={{
                         show: true,
                         blink: true,
@@ -101,10 +101,10 @@ const HomePage = React.createClass({
                 </Typist> : null }
 
                 { this.state.typing2 ? <Typist 
-                    className="typing-animation-2"
+                    className="typing-animation-2 typing-animation"
                     startDelay={1000} 
                     avgTypingDelay={50} 
-                    stdTypingDelay={60} 
+                    stdTypingDelay={100} 
                     cursor={{
                         show: true,
                         blink: true,
@@ -117,6 +117,9 @@ const HomePage = React.createClass({
                         if (lineIdx === 0 && charIdx === line.length - 1) {
                             return 1000;
                         }
+                        if (lineIdx === 1 && charIdx === line.length - 1) {
+                            return 1500;
+                        }
                         return defDelayGenerator();
                         }
                     } 
@@ -127,7 +130,7 @@ const HomePage = React.createClass({
                 </Typist> : null }
 
                 { this.state.typing3 ? <Typist 
-                    className="typing-animation-3"
+                    className="typing-animation-3 typing-animation"
                     startDelay={1000} 
                     avgTypingDelay={150} 
                     stdTypingDelay={60} 
@@ -156,14 +159,14 @@ const HomePage = React.createClass({
 
                 <HomePageBackground width={this.props.width} height={this.props.height}/>
                 { this.state.showButton ? 
-                    <button className="yes" onClick={this.props.handleTurn}>Yes, please.</button>
+                    <div className="button-wrapper">
+                        <button className="yes" onClick={this.props.handleTurn}>Yes, please.</button>
+                        <button className="no" onClick={this.goodbye}>No, thanks.</button>
+                    </div>
                      : null }
-                { this.state.showButton ?
-                    <button className="no" onClick={this.goodbye}>No, thanks.</button> 
-                    : null }
 
                 { this.state.typing4 ? <Typist 
-                    className="typing-animation-3"
+                    className="typing-animation-4 typing-animation"
                     startDelay={1000} 
                     avgTypingDelay={150} 
                     stdTypingDelay={60} 
