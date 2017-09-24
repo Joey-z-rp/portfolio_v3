@@ -10,14 +10,17 @@ import Link from './Link';
 class App extends Component {
   state = {
     displayHome: true,
-    displayAbout: true,
+    displayAbout: false,
     displaySkill: false,
     displayLink: false,
     styleContent: {
-      transformOrigin: '0 300px 300px'
+      transformOrigin: '400px 0 400px'
     },
-    calculate: true
+    calculate: true,
+    windowWidth: 0
   };
+
+
 
   turnToAbout = e => {
     this.setState({
@@ -47,25 +50,15 @@ class App extends Component {
     });
   };
 
-  countHeight = (height, componentName) => {
-    // console.log(componentName + height);
-    switch(componentName){
-      case "about":
-        this.setState({
-          about: height
-        });
-        break;
-    }
-
-  }
-
   componentDidMount = function(){
-
-    this.setState({
-      displayAbout: false,
-      calculate: false
-    });
+    window.onresize = function(){
+      console.log(window.innerWidth);
+      this.setState({
+        windowWidth: window.innerWidth
+      });
+    }.bind(this);
   }
+  
   
 
   render() {
@@ -79,7 +72,9 @@ class App extends Component {
 
           {this.state.displayHome ? <HomePage 
             handleTurn={this.turnToAbout} 
-            styleContent={this.state.styleContent}/> : null }
+            styleContent={this.state.styleContent} 
+            initialCalculate={this.state.calculate} 
+            calculateHeight={this.countHeight}/> : null }
           {this.state.displayAbout ? <About 
             handleTurn={this.turnToSkill} 
             styleContent={this.state.styleContent} 
@@ -97,5 +92,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

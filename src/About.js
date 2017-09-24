@@ -9,12 +9,12 @@ const About = React.createClass({
         styleContent: PropTypes.object.isRequired
     },
 
-    componentDidMount: function(){
-        if(this.props.initialCalculate){
-            const height = this.div.clientHeight;
-            this.props.calculateHeight(height,"about");
-        }
-    },
+    // componentDidMount: function(){
+    //     if(this.props.initialCalculate){
+    //         const height = this.div.clientHeight;
+    //         this.props.calculateHeight(height,"about");
+    //     }
+    // },
 
     render: function(){
         return (
