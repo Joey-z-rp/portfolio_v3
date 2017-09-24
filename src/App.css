@@ -27,10 +27,14 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem; }
-  .home button {
+  .home .yes {
     position: absolute;
     top: 50%;
     left: 0; }
+  .home .no {
+    position: absolute;
+    top: 50%;
+    left: 50%; }
 
 .about {
   height: 600px;

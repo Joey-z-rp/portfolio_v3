@@ -136,7 +136,7 @@ function space(canvas, width, height){
         }
     }
 
-    if(checkIE() || detectmob()){
+    if(false){
         balls.forEach(move);
         balls.sort(function(a, b){ return (b.zpos - a.zpos);});
         drawAllBalls(ctx);

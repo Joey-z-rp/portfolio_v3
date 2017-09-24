@@ -19,6 +19,8 @@ const HomePage = React.createClass({
           typing1: true,
           typing2: false,
           typing3: false,
+          typing4: false,
+          showButton: false,
         };
     },
 
@@ -37,6 +39,14 @@ const HomePage = React.createClass({
                 });
                 break;
         }
+    },
+
+    goodbye: function(){
+        this.setState({
+            typing3: false,
+            showButton: false,
+            typing4: true
+        });
     },
 
     componentDidMount() {
@@ -131,16 +141,49 @@ const HomePage = React.createClass({
                     delayGenerator={
                         function(mean, std, {line, lineIdx, charIdx, defDelayGenerator}) {
                         if (lineIdx === 0 && charIdx === line.length - 1) {
-                            return 2000;
+                            return 1000;
                         }
                         return defDelayGenerator();
                         }
-                    } >
+                    } 
+                    onTypingDone={function(){ 
+                        this.setState({
+                            showButton: true
+                        }); 
+                    }.bind(this)} >
                     Would you like to know more about me?
                 </Typist> : null }
 
                 <HomePageBackground width={this.props.width} height={this.props.height}/>
-                <button onClick={this.props.handleTurn}>Turn</button>
+                { this.state.showButton ? 
+                    <button className="yes" onClick={this.props.handleTurn}>Yes, please.</button>
+                     : null }
+                { this.state.showButton ?
+                    <button className="no" onClick={this.goodbye}>No, thanks.</button> 
+                    : null }
+
+                { this.state.typing4 ? <Typist 
+                    className="typing-animation-3"
+                    startDelay={1000} 
+                    avgTypingDelay={150} 
+                    stdTypingDelay={60} 
+                    cursor={{
+                        show: true,
+                        blink: true,
+                        element: '▌',
+                        hideWhenDone: false,
+                        hideWhenDoneDelay: 1000,
+                    }} 
+                    delayGenerator={
+                        function(mean, std, {line, lineIdx, charIdx, defDelayGenerator}) {
+                        if (lineIdx === 0 && charIdx === line.length - 1) {
+                            return 1000;
+                        }
+                        return defDelayGenerator();
+                        }
+                    }  >
+                    No worries, bye!
+                </Typist> : null }
             </div>
         );
     }

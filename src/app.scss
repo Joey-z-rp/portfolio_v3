@@ -35,10 +35,15 @@
         font-size: 2rem;
     }
 
-    button {
+    .yes {
         position: absolute;
         top: 50%;
         left: 0; 
+    }
+    .no {
+        position: absolute;
+        top: 50%;
+        left: 50%; 
     }
 }
 
