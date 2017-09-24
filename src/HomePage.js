@@ -20,7 +20,7 @@ const HomePage = React.createClass({
           typing2: false,
           typing3: false,
           typing4: false,
-          showButton: false,
+          showButton: true,
         };
     },
 
@@ -124,7 +124,7 @@ const HomePage = React.createClass({
                         }
                     } 
                     onTypingDone={function(){ this.onAnimationFinish(2) }.bind(this)} >
-                    My name is Joey,
+                    My name is <strong>Joey</strong>,&nbsp;
                     <br />
                     an enthusiastic web developer.
                 </Typist> : null }

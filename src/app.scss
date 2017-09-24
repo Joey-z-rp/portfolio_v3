@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 
 * {
     margin: 0;
@@ -6,7 +7,17 @@
 }
 
 body {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Fjalla One', sans-serif;
+
+    h2 {
+        text-align: center;
+        font-size: 1.9rem;
+        background-color: #1d2951;
+        color: #fff;
+        margin: 0;
+        height: 60px;
+        line-height: 60px;
+    }
 }
 
 .home, .about, .skill, .link {
@@ -20,6 +31,7 @@ body {
     background-color: #000;
     color: #fff;
     font-size: 3rem;
+    font-family: 'Indie Flower', cursive;
 
     .typing-animation {
         text-align: center;
@@ -90,20 +102,87 @@ body {
     }
 }
 
+
+
 .about {
-    height: 600px;
-    background-color: green;
+    .about-me-wrap {
+        padding: 1.9rem 6.25rem;
+        max-width: 1170px;
+        margin: auto;
+        font-size: 1.6rem;
+        line-height: 3.1rem;
+        min-height: 600px;
+
+        img {
+            float: left;
+            width: 600px;
+            height: 600px;
+            margin: 0 70px 30px 0;
+        }
+    }
 }
 
 .skill {
-    height: 800px;
-    background-color: blue;
+    .skill-set-wrap {
+        max-width: 1170px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 2.25rem;
+        padding: 1.3rem 0;
+
+        .skill-set-upper-row, .skill-set-lower-row {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 2rem;
+
+            p {
+                font-size: 1.9rem;
+                margin-bottom: 1rem;
+            }
+
+            canvas {
+                background-color: #fff;
+                width: 12.5rem;
+                height: 12.5rem;
+            }
+        }
+    }
 }
 
 .link {
-    width: 100%;
-    height: 1500px;
-    background-color: orange;
+    .links-wrap {
+        max-width: 1170px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.9rem;
+        text-align: center;
+        padding-top: 1.3rem;
+
+        .links-description {
+            padding: 1.9rem;
+        }
+
+        .links-box {
+            display: flex;
+            justify-content: space-around;
+            margin: 1.9rem;	
+        }
+
+        img {
+            display: none;
+        }
+
+        canvas {
+                background-color: #fff;
+                width: 12.5rem;
+                height: 12.5rem;
+            }
+
+        #codepen-canvas {
+            width: 600px;
+        }
+    }
 }
 
 .rotate-enter {
@@ -151,7 +230,7 @@ body {
     0% {
         transform: translateX(-30px);
     }
-    70% {
+    50% {
         transform: translateX(0px);
     }
     100% {

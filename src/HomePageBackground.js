@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 const HomePageBackground = React.createClass({
     protoTypes: {
         width: PropTypes.number.isRequired,
-        height: PropTypes.number.isRequired
+        height: PropTypes.number.isRequired,
     },
 
     componentDidMount() {
         let canvas = this.canvas;
         let width = this.props.width;
         let height = this.props.height;
-            console.log(width, height);
         space(canvas, width, height);
     },
     
