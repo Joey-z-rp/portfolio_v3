@@ -9,17 +9,10 @@ const About = React.createClass({
         styleContent: PropTypes.object.isRequired
     },
 
-    // componentDidMount: function(){
-    //     if(this.props.initialCalculate){
-    //         const height = this.div.clientHeight;
-    //         this.props.calculateHeight(height,"about");
-    //     }
-    // },
-
     render: function(){
         return (
             <div className="about" style={this.props.styleContent} ref={ (div) => this.div = div} >
-                <h1>This is about page.</h1>
+                <h1>This is about page.This is about page.This is about page.This is about page.</h1>
                 <h1>This is about page.</h1>
                 <h1>This is about page.</h1>
                 <h1>This is about page.</h1>

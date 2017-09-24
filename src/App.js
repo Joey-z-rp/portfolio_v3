@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import HomePage from './HomePage';
@@ -14,10 +13,8 @@ class App extends Component {
     displaySkill: false,
     displayLink: false,
     styleContent: {
-      transformOrigin: '400px 0 400px'
+      transformOrigin: `${window.innerWidth / 2 - 10}px 0 ${window.innerWidth / 2 - 10}px`
     },
-    calculate: true,
-    windowWidth: 0
   };
 
 
@@ -52,9 +49,10 @@ class App extends Component {
 
   componentDidMount = function(){
     window.onresize = function(){
-      console.log(window.innerWidth);
       this.setState({
-        windowWidth: window.innerWidth
+        styleContent: {
+          transformOrigin: `${window.innerWidth / 2 - 10}px 0 ${window.innerWidth / 2 - 10}px`
+        }
       });
     }.bind(this);
   }

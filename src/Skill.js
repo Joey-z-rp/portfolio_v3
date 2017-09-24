@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Skill = props => {
     return (
         <div className="skill" style={props.styleContent}>
-            <h1>This is skill page.</h1>
+            <h1>This is skill page.This is skill page.This is skill page.This is skill page.</h1>
             <h1>This is skill page.</h1>
             <h1>This is skill page.</h1>
             <h1>This is skill page.</h1>
