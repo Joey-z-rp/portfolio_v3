@@ -18,6 +18,14 @@
   .home .typing-animation-2 {
     position: absolute;
     top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem; }
+  .home .typing-animation-3 {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 2rem; }
   .home button {
     position: absolute;
