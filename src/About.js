@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import NavMenu from './NavMenu';
 
 
 const About = React.createClass({
@@ -19,7 +20,7 @@ const About = React.createClass({
                         After 8 years' work as an aircraft maintenance engineer, I moved to Australia and started new life here. Computer science and information technology have always been my interest since I was a child, so I decided to follow my heart and change career to be a software developer. I am studying HTML, CSS, Javascript, React.js, Node.js, Ruby, Rails etc. I am good at learning and really enjoy it, which I think is a core ability to a developer.
                     </p>
                 </div>
-                <button onClick={this.props.handleTurn}>Turn</button>
+                <NavMenu handleTurn={this.props.handleTurn} currentPage="about"/>
             </div>
         );
     }

@@ -109,13 +109,13 @@ class App extends Component {
             width={this.state.windowWidth} 
             height={this.state.windowHeight} /> : null }
           {this.state.displayAbout ? <About 
-            handleTurn={this.turnToSkill} 
+            handleTurn={this.turnTo} 
             styleContent={this.state.styleContent} /> : null }
           {this.state.displaySkill ? <Skill 
-            handleTurn={this.turnToLink} 
+            handleTurn={this.turnTo} 
             styleContent={this.state.styleContent}/> : null }
           {this.state.displayLink ? <Link 
-            handleTurn={this.turnToHome} 
+            handleTurn={this.turnTo} 
             styleContent={this.state.styleContent}/> : null }
 
         </ReactCSSTransitionGroup>

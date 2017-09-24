@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LoadingCircle from './LoadingCircle';
+import NavMenu from './NavMenu';
 
 
 const Skill = props => {
@@ -37,7 +38,7 @@ const Skill = props => {
                     </div>
                 </div>
             </div>
-            <button onClick={props.handleTurn}>Turn</button>
+            <NavMenu handleTurn={props.handleTurn} currentPage="skill"/>
         </div>
     );
 };

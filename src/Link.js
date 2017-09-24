@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ParticleImage from './ParticleImage';
+import NavMenu from './NavMenu';
 
 const Link = props => {
     return (
@@ -30,8 +31,7 @@ const Link = props => {
                     </a>
                 </div>
             </div>
-            <button onClick={props.handleTurn}>Turn</button>
-
+            <NavMenu handleTurn={props.handleTurn} currentPage="link"/>
         </div>
     );
 };
