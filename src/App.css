@@ -58,7 +58,8 @@ body {
       font-family: 'Indie Flower', cursive;
       font-size: 2rem;
       background-color: #2B8AE9;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all 0.5s linear; }
     .home .button-wrapper .yes {
       position: relative; }
     .home .button-wrapper .yes:hover {
@@ -130,6 +131,29 @@ body {
     height: 12.5rem; }
   .link .links-wrap #codepen-canvas {
     width: 600px; }
+
+.nav {
+  position: fixed;
+  right: -7rem;
+  top: 50%;
+  transform: translateY(-50%); }
+  .nav .btn {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #2B8AE9;
+    border-radius: 15px;
+    display: block;
+    width: 10rem;
+    height: 4rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.8s ease;
+    opacity: 0.4; }
+    .nav .btn:hover {
+      transform: translateX(-7rem);
+      opacity: 1; }
 
 .rotate-enter {
   transform: rotateY(-90deg); }
