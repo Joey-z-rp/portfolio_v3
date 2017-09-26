@@ -20,7 +20,7 @@ const HomePage = React.createClass({
           typing2: false,
           typing3: false,
           typing4: false,
-          showButton: true,
+          showButton: false,
         };
     },
 

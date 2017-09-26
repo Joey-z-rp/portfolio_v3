@@ -10,6 +10,64 @@ const About = React.createClass({
         styleContent: PropTypes.object.isRequired
     },
 
+    componentDidMount(){
+        class Pieces {
+            constructor(imageDiv, imgsrc) {
+                this.options = {
+                    // Number of pieces / Layout (rows x cols).
+                    pieces: {rows: 12, columns: 10},
+                };
+                this.imgsrc = imgsrc;
+                this.imageDiv = imageDiv;
+                this.init();
+            }
+            init() {
+                // Window sizes.
+                this.win = {width: window.innerWidth, height: window.innerHeight};
+                // Container sizes.
+                this.dimensions = {width: this.imageDiv.offsetWidth, height: this.imageDiv.offsetHeight};
+                // Render all the pieces defined in the options.
+                this.layout();
+                this.setImage();
+    
+            }
+            layout() {
+                // Create the pieces and add them to the DOM (append it to the main element).
+                this.pieces = [];
+                for (let r = 0; r < this.options.pieces.rows; r++) {
+                    for (let c = 0; c < this.options.pieces.columns; c++) {
+                        const piece = this.createPiece(r,c);	
+                        piece.style.backgroundPosition = `${-1*c*100}% ${-1*100*r}%`;
+                        this.pieces.push(piece);
+                    }
+                }
+            }
+            createPiece(row, column) {
+                const w = Math.round(this.dimensions.width/this.options.pieces.columns);
+                const h = Math.round(this.dimensions.height/this.options.pieces.rows);
+                const piece = document.createElement('div');
+    
+                piece.style.backgroundImage = `url(${this.imgsrc})`;
+                piece.className = 'piece';
+                piece.style.width = `${w}px`;
+                piece.style.height = `${h}px`;
+                piece.style.backgroundSize = `${w*this.options.pieces.columns+4}px auto`;
+                this.imageDiv.appendChild(piece);
+    
+                return piece;
+            }
+            // Set the pieces background image.
+            setImage(imgsrc) {
+                for(const piece of this.pieces) {
+                    piece.style.backgroundImage = `url(${this.imgsrc})`;
+                }
+            }
+    
+        };
+
+        // const piece = new Pieces(document.querySelector('.my-bio'), "./bio-color.jpg");
+    },
+
     render: function(){
         return (
             <div className="about" style={this.props.styleContent} ref={ (div) => this.div = div} >
@@ -18,9 +76,9 @@ const About = React.createClass({
                 <div className="video-layer"></div>
                 <div className="about-me-wrap">
                     <div className="about-me-box">
-                        <img src="./images/bio.jpg" alt="my-picture" />
+                        <div className="my-bio"></div>
                         <p>
-                            After 8 years' work as an aircraft maintenance engineer, I moved to Australia and started new life here. Computer science and information technology have always been my interest, so I decided to follow my heart and change career to be a software developer. I am familiar with HTML, CSS, Javascript, React.js, Node.js, Ruby, Rails etc. I am good at learning and really enjoy it, which I think is a core ability to a developer.
+                            After 8 years' work as an aircraft maintenance engineer, I moved here and started new life. Computer science and information technology have always been my interest, so I decided to follow my heart and change career to be a software developer. I am familiar with HTML, CSS, Javascript, React.js, Node.js, Ruby, Rails etc. I am good at learning and really enjoy it, which I think is a core ability to a developer.
                         </p>
                     </div>
                 </div>

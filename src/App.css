@@ -107,11 +107,16 @@ body {
       left: 0;
       transform: translateY(-50%);
       padding: 0 6rem; }
-      .about .about-me-wrap .about-me-box img {
+      .about .about-me-wrap .about-me-box .my-bio {
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.8rem;
         float: left;
         width: 250px;
         height: 250px;
-        margin: 0 25px 0 0; }
+        margin: 0 25px 0 0;
+        background-image: url(./images/bio.jpg);
+        background-size: cover; }
       .about .about-me-wrap .about-me-box p {
         color: #fff; }
 

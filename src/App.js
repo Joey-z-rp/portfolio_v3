@@ -13,7 +13,8 @@ class App extends Component {
     displaySkill: false,
     displayLink: false,
     styleContent: {
-      transformOrigin: `${window.innerWidth / 2 - 10}px 0 ${window.innerWidth / 2 - 10}px`
+      transformOrigin: `${window.innerWidth / 2 - 10}px 0 ${window.innerWidth / 2 - 10}px`,
+      height: `${window.innerHeight}px`
     },
     windowWidth: window.innerWidth,
     windowHeight: window.innerHeight,
