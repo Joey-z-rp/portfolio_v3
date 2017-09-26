@@ -105,6 +105,7 @@ function particleImage(canvas, image, width, height){
 		(function draw(){
 			ctx.clearRect(0, 0, w, h);
 			shape.display(ctx);
+			console.log('particle');
 			window.requestAnimationFrame(draw);
 		}())
 	}

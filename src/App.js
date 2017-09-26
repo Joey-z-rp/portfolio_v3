@@ -19,36 +19,6 @@ class App extends Component {
     windowHeight: window.innerHeight,
   };
 
-
-
-  // turnToAbout = e => {
-  //   this.setState({
-  //     displayAbout: true,
-  //     displayHome: false
-  //   });
-  // };
-
-  // turnToSkill = e => {
-  //   this.setState({
-  //     displayAbout: false,
-  //     displaySkill: true
-  //   });
-  // };
-
-  // turnToLink = e => {
-  //   this.setState({
-  //     displayLink: true,
-  //     displaySkill: false
-  //   });
-  // };
-
-  // turnToHome = e => {
-  //   this.setState({
-  //     displayLink: false,
-  //     displayHome: true
-  //   });
-  // };
-
   turnTo = (currentPage, nextPage) => {
     switch(currentPage){
       case "home":

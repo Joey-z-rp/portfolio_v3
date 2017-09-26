@@ -78,18 +78,42 @@ body {
     .home .button-wrapper .no:hover {
       background-color: #C7112F; }
 
-.about .about-me-wrap {
-  padding: 1.9rem 6.25rem;
-  max-width: 1170px;
-  margin: auto;
-  font-size: 1.6rem;
-  line-height: 3.1rem;
-  min-height: 600px; }
-  .about .about-me-wrap img {
-    float: left;
-    width: 600px;
-    height: 600px;
-    margin: 0 70px 30px 0; }
+.about {
+  overflow: hidden; }
+  .about .video-layer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    z-index: -1; }
+  .about video {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+    z-index: -1; }
+  .about .about-me-wrap {
+    max-width: 1170px;
+    margin: auto;
+    font-size: 1.6rem;
+    line-height: 3.1rem; }
+    .about .about-me-wrap .about-me-box {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      padding: 0 6rem; }
+      .about .about-me-wrap .about-me-box img {
+        float: left;
+        width: 250px;
+        height: 250px;
+        margin: 0 25px 0 0; }
+      .about .about-me-wrap .about-me-box p {
+        color: #fff; }
 
 .skill .skill-set-wrap {
   max-width: 1170px;
