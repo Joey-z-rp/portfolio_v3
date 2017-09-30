@@ -150,6 +150,18 @@ body {
                 background-size: cover;
                 .piece {
                     animation: fly-back 0.5s;
+                    &:first-child {
+                        border-top-left-radius: 0.8rem;
+                    }
+                    &:nth-child(10) {
+                        border-top-right-radius: 0.8rem;
+                    }
+                    &:nth-child(111) {
+                        border-bottom-left-radius: 0.8rem;
+                    }
+                    &:last-child {
+                        border-bottom-right-radius: 0.8rem;
+                    }
                 }
 
                 .fly-away {
