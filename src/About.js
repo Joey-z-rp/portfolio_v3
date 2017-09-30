@@ -16,23 +16,12 @@ const About = React.createClass({
             const piece = new Pieces(document.querySelector('.my-bio'), "./bio.jpg");
             flyAway(false,0);
             flyAway(true,1);
-            window.addEventListener('mousemove', function(e){
-                const x = getMousePos(e).x;
-                const y = getMousePos(e).y;
-                const top = getElementPos('.my-bio').top;
-                const bottom = getElementPos('.my-bio').bottom;
-                const left = getElementPos('.my-bio').left;
-                const right = getElementPos('.my-bio').right;
-                const className = document.querySelector('.piece').className;
-                if(x > left && x < right && y > top && y < bottom
-                     && className === "piece"){
-                    flyAway(false,1);
-                }else if((x < left || x > right || y < top || y > bottom)
-                     && className === "piece fly-away"){
-                    flyAway(true,1);
-                }
-            });
+            window.addEventListener('mousemove', checkMouseOn);
         },100);
+    },
+
+    componentWillUnmount(){
+        window.removeEventListener('mousemove',checkMouseOn);
     },
 
     render: function(){
@@ -54,6 +43,23 @@ const About = React.createClass({
         );
     }
 });
+
+function checkMouseOn (e){
+    const x = getMousePos(e).x;
+    const y = getMousePos(e).y;
+    const top = getElementPos('.my-bio').top;
+    const bottom = getElementPos('.my-bio').bottom;
+    const left = getElementPos('.my-bio').left;
+    const right = getElementPos('.my-bio').right;
+    const className = document.querySelector('.piece').className;
+    if(x > left && x < right && y > top && y < bottom
+         && className === "piece"){
+        flyAway(false,1);
+    }else if((x < left || x > right || y < top || y > bottom)
+         && className === "piece fly-away"){
+        flyAway(true,1);
+    }
+}
 
 
 function flyAway(flyBack,isRandom){
