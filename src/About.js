@@ -10,63 +10,15 @@ const About = React.createClass({
         styleContent: PropTypes.object.isRequired
     },
 
-    // componentDidMount(){
-    //     class Pieces {
-    //         constructor(imageDiv, imgsrc) {
-    //             this.options = {
-    //                 // Number of pieces / Layout (rows x cols).
-    //                 pieces: {rows: 12, columns: 10},
-    //             };
-    //             this.imgsrc = imgsrc;
-    //             this.imageDiv = imageDiv;
-    //             this.init();
-    //         }
-    //         init() {
-    //             // Window sizes.
-    //             this.win = {width: window.innerWidth, height: window.innerHeight};
-    //             // Container sizes.
-    //             this.dimensions = {width: this.imageDiv.offsetWidth, height: this.imageDiv.offsetHeight};
-    //             // Render all the pieces defined in the options.
-    //             this.layout();
-    //             this.setImage();
-    
-    //         }
-    //         layout() {
-    //             // Create the pieces and add them to the DOM (append it to the main element).
-    //             this.pieces = [];
-    //             for (let r = 0; r < this.options.pieces.rows; r++) {
-    //                 for (let c = 0; c < this.options.pieces.columns; c++) {
-    //                     const piece = this.createPiece(r,c);	
-    //                     piece.style.backgroundPosition = `${-1*c*100}% ${-1*100*r}%`;
-    //                     this.pieces.push(piece);
-    //                 }
-    //             }
-    //         }
-    //         createPiece(row, column) {
-    //             const w = Math.round(this.dimensions.width/this.options.pieces.columns);
-    //             const h = Math.round(this.dimensions.height/this.options.pieces.rows);
-    //             const piece = document.createElement('div');
-    
-    //             piece.style.backgroundImage = `url(${this.imgsrc})`;
-    //             piece.className = 'piece';
-    //             piece.style.width = `${w}px`;
-    //             piece.style.height = `${h}px`;
-    //             piece.style.backgroundSize = `${w*this.options.pieces.columns+4}px auto`;
-    //             this.imageDiv.appendChild(piece);
-    
-    //             return piece;
-    //         }    
-    //         // Set the pieces background image.
-    //         setImage(imgsrc) {
-    //             for(const piece of this.pieces) {
-    //                 piece.style.backgroundImage = `url(${this.imgsrc})`;
-    //             }
-    //         }
-    
-    //     };
+    componentDidMount(){
 
-    //     const piece = new Pieces(document.querySelector('.my-bio'), "./bio-color.jpg");
-    // },
+        setTimeout(function(){
+            const piece = new Pieces(document.querySelector('.my-bio'), "./bio-color.jpg");
+            document.querySelector('.my-bio').addEventListener('mouseover',() => {flyAway(false)},false);
+            document.querySelector('.my-bio').addEventListener('mouseout',() => {flyAway(true)},false);
+        },1500);
+       
+    },
 
     render: function(){
         return (
@@ -89,6 +41,96 @@ const About = React.createClass({
 });
 
 
+function flyAway(flyBack){
+    const photoPieces = document.querySelectorAll('.piece');
+    for(let i = 0; i < photoPieces.length; i++){
+        (function(i,photoPieces,flyBack){
+            setTimeout(function(){
+                flyBack ? photoPieces[i].className = "piece" :
+                photoPieces[i].className = "piece fly-away";
+            }, Math.random()*500);
+        })(i,photoPieces,flyBack);
+        
+    }
+}
+
+class Pieces {
+    constructor(imageDiv, imgsrc) {
+        this.options = {
+            // Number of pieces / Layout (rows x cols).
+            pieces: {rows: 12, columns: 10},
+        };
+        this.imgsrc = imgsrc;
+        this.imageDiv = imageDiv;
+        this.init();
+    }
+    init() {
+        // Window sizes.
+        this.win = {width: window.innerWidth, height: window.innerHeight};
+        // Container sizes.
+        this.dimensions = {width: this.imageDiv.offsetWidth, height: this.imageDiv.offsetHeight};
+        // Render all the pieces defined in the options.
+        this.layout();
+        this.setImage();
+
+    }
+    layout() {
+        // Create the pieces and add them to the DOM (append it to the main element).
+        this.pieces = [];
+        for (let r = 0; r < this.options.pieces.rows; r++) {
+            for (let c = 0; c < this.options.pieces.columns; c++) {
+                const piece = this.createPiece(r,c);	
+                piece.style.backgroundPosition = `${-1*c*100}% ${-1*100*r}%`;
+                this.pieces.push(piece);
+            }
+        }
+    }
+    createPiece(row, column) {
+        const w = Math.round(this.dimensions.width/this.options.pieces.columns);
+        const h = Math.round(this.dimensions.height/this.options.pieces.rows);
+        const piece = document.createElement('div');
+
+        piece.style.backgroundImage = `url(${this.imgsrc})`;
+        piece.className = 'piece';
+        piece.style.width = `${w}px`;
+        piece.style.height = `${h}px`;
+        piece.style.backgroundSize = `${w*this.options.pieces.columns+4}px auto`;
+        this.imageDiv.appendChild(piece);
+
+        return piece;
+    }    
+    // Set the pieces background image.
+    setImage(imgsrc) {
+        for(const piece of this.pieces) {
+            piece.style.backgroundImage = `url(${this.imgsrc})`;
+        }
+    }
+
+};
+
+function getMousePos(e){
+    let posx = 0;
+    let posy = 0;
+    if (!e) {let e = window.event};
+    if (e.pageX || e.pageY) 	{
+        posx = e.pageX;
+        posy = e.pageY;
+    }
+    else if (e.clientX || e.clientY) 	{
+        posx = e.clientX + document.body.scrollLeft
+            + document.documentElement.scrollLeft;
+        posy = e.clientY + document.body.scrollTop
+            + document.documentElement.scrollTop;
+    }
+    return {
+        x : posx,
+        y : posy
+    };
+}
+
+function getElementPos(className){
+
+}
 
 
 export default About;

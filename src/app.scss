@@ -148,6 +148,13 @@ body {
                 margin: 0 25px 0 0;
                 background-image: url(./images/bio.jpg);
                 background-size: cover;
+                .piece {
+                    transition: transform 2s;
+                }
+
+                .fly-away {
+                    transform: translateX(-500px);
+                }
             }
     
             p {

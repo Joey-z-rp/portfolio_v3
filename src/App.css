@@ -117,6 +117,10 @@ body {
         margin: 0 25px 0 0;
         background-image: url(./images/bio.jpg);
         background-size: cover; }
+        .about .about-me-wrap .about-me-box .my-bio .piece {
+          transition: transform 2s; }
+        .about .about-me-wrap .about-me-box .my-bio .fly-away {
+          transform: translateX(-500px); }
       .about .about-me-wrap .about-me-box p {
         color: #fff; }
 
