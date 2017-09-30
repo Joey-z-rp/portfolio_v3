@@ -10,63 +10,63 @@ const About = React.createClass({
         styleContent: PropTypes.object.isRequired
     },
 
-    componentDidMount(){
-        class Pieces {
-            constructor(imageDiv, imgsrc) {
-                this.options = {
-                    // Number of pieces / Layout (rows x cols).
-                    pieces: {rows: 12, columns: 10},
-                };
-                this.imgsrc = imgsrc;
-                this.imageDiv = imageDiv;
-                this.init();
-            }
-            init() {
-                // Window sizes.
-                this.win = {width: window.innerWidth, height: window.innerHeight};
-                // Container sizes.
-                this.dimensions = {width: this.imageDiv.offsetWidth, height: this.imageDiv.offsetHeight};
-                // Render all the pieces defined in the options.
-                this.layout();
-                this.setImage();
+    // componentDidMount(){
+    //     class Pieces {
+    //         constructor(imageDiv, imgsrc) {
+    //             this.options = {
+    //                 // Number of pieces / Layout (rows x cols).
+    //                 pieces: {rows: 12, columns: 10},
+    //             };
+    //             this.imgsrc = imgsrc;
+    //             this.imageDiv = imageDiv;
+    //             this.init();
+    //         }
+    //         init() {
+    //             // Window sizes.
+    //             this.win = {width: window.innerWidth, height: window.innerHeight};
+    //             // Container sizes.
+    //             this.dimensions = {width: this.imageDiv.offsetWidth, height: this.imageDiv.offsetHeight};
+    //             // Render all the pieces defined in the options.
+    //             this.layout();
+    //             this.setImage();
     
-            }
-            layout() {
-                // Create the pieces and add them to the DOM (append it to the main element).
-                this.pieces = [];
-                for (let r = 0; r < this.options.pieces.rows; r++) {
-                    for (let c = 0; c < this.options.pieces.columns; c++) {
-                        const piece = this.createPiece(r,c);	
-                        piece.style.backgroundPosition = `${-1*c*100}% ${-1*100*r}%`;
-                        this.pieces.push(piece);
-                    }
-                }
-            }
-            createPiece(row, column) {
-                const w = Math.round(this.dimensions.width/this.options.pieces.columns);
-                const h = Math.round(this.dimensions.height/this.options.pieces.rows);
-                const piece = document.createElement('div');
+    //         }
+    //         layout() {
+    //             // Create the pieces and add them to the DOM (append it to the main element).
+    //             this.pieces = [];
+    //             for (let r = 0; r < this.options.pieces.rows; r++) {
+    //                 for (let c = 0; c < this.options.pieces.columns; c++) {
+    //                     const piece = this.createPiece(r,c);	
+    //                     piece.style.backgroundPosition = `${-1*c*100}% ${-1*100*r}%`;
+    //                     this.pieces.push(piece);
+    //                 }
+    //             }
+    //         }
+    //         createPiece(row, column) {
+    //             const w = Math.round(this.dimensions.width/this.options.pieces.columns);
+    //             const h = Math.round(this.dimensions.height/this.options.pieces.rows);
+    //             const piece = document.createElement('div');
     
-                piece.style.backgroundImage = `url(${this.imgsrc})`;
-                piece.className = 'piece';
-                piece.style.width = `${w}px`;
-                piece.style.height = `${h}px`;
-                piece.style.backgroundSize = `${w*this.options.pieces.columns+4}px auto`;
-                this.imageDiv.appendChild(piece);
+    //             piece.style.backgroundImage = `url(${this.imgsrc})`;
+    //             piece.className = 'piece';
+    //             piece.style.width = `${w}px`;
+    //             piece.style.height = `${h}px`;
+    //             piece.style.backgroundSize = `${w*this.options.pieces.columns+4}px auto`;
+    //             this.imageDiv.appendChild(piece);
     
-                return piece;
-            }
-            // Set the pieces background image.
-            setImage(imgsrc) {
-                for(const piece of this.pieces) {
-                    piece.style.backgroundImage = `url(${this.imgsrc})`;
-                }
-            }
+    //             return piece;
+    //         }    
+    //         // Set the pieces background image.
+    //         setImage(imgsrc) {
+    //             for(const piece of this.pieces) {
+    //                 piece.style.backgroundImage = `url(${this.imgsrc})`;
+    //             }
+    //         }
     
-        };
+    //     };
 
-        // const piece = new Pieces(document.querySelector('.my-bio'), "./bio-color.jpg");
-    },
+    //     const piece = new Pieces(document.querySelector('.my-bio'), "./bio-color.jpg");
+    // },
 
     render: function(){
         return (

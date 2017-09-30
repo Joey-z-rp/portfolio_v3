@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+var animation;
 const ParticleImage = React.createClass({
     protoTypes: {
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
         url: PropTypes.string.isRequired,
+	},
+	
+	getInitialState: function(){
+        return {
+          animation: null,
+        };
     },
 
     componentDidMount() {
@@ -13,8 +19,13 @@ const ParticleImage = React.createClass({
         let image = this.img;
         let width = this.props.width;
         let height = this.props.height;
-        setTimeout(() => {particleImage(canvas, image, width, height)},1200);
-    },
+        setTimeout(() => {particleImage(canvas, image, width, height, animation)},1200);
+	},
+	
+	componentWillUnmount(){
+
+		window.cancelAnimationFrame(animation);	
+	},
     
     render: function(){
         return (
@@ -28,7 +39,7 @@ const ParticleImage = React.createClass({
     }
 });
 
-function particleImage(canvas, image, width, height){
+function particleImage(canvas, image, width, height, animationFunction){
 	var img = image,
 		w = canvas.width = width,
 		h = canvas.height = height,
@@ -105,8 +116,9 @@ function particleImage(canvas, image, width, height){
 		(function draw(){
 			ctx.clearRect(0, 0, w, h);
 			shape.display(ctx);
-			console.log('particle');
-			window.requestAnimationFrame(draw);
+			// console.log('particle');
+			animation=window.requestAnimationFrame(draw);
+			console.log(animation);
 		}())
 	}
 }

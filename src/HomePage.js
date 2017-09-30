@@ -20,7 +20,7 @@ const HomePage = React.createClass({
           typing2: false,
           typing3: false,
           typing4: false,
-          showButton: false,
+          showButton: true,
         };
     },
 
@@ -118,13 +118,13 @@ const HomePage = React.createClass({
                             return 1000;
                         }
                         if (lineIdx === 1 && charIdx === line.length - 1) {
-                            return 1500;
+                            return 2000;
                         }
                         return defDelayGenerator();
                         }
                     } 
                     onTypingDone={function(){ this.onAnimationFinish(2) }.bind(this)} >
-                    My name is <strong>Joey</strong>,&nbsp;
+                    My name is Joey,&nbsp;
                     <br />
                     an enthusiastic web developer.
                 </Typist> : null }
@@ -132,8 +132,8 @@ const HomePage = React.createClass({
                 { this.state.typing3 ? <Typist 
                     className="typing-animation-3 typing-animation"
                     startDelay={1000} 
-                    avgTypingDelay={150} 
-                    stdTypingDelay={60} 
+                    avgTypingDelay={80} 
+                    stdTypingDelay={100} 
                     cursor={{
                         show: true,
                         blink: true,
