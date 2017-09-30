@@ -149,11 +149,11 @@ body {
                 background-image: url(./images/bio-color.jpg);
                 background-size: cover;
                 .piece {
-                    transition: transform 2s;
+                    animation: fly-back 0.5s;
                 }
 
                 .fly-away {
-                    transform: translateX(-500px);
+                    animation: fly 10s;
                 }
             }
     
@@ -304,5 +304,29 @@ body {
     }
     100% {
         transform: translateX(-30px);
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0,0);
+    }
+    5% {
+        transform: translate(-50px, -30px);
+    }
+    7% {
+        transform: translate(-1000px, -30px);
+    }
+    100% {
+        transform: translate(-1000px, -30px);
+    }
+}
+
+@keyframes fly-back {
+    0% {
+        transform: translate(-1000px, -30px);
+    }
+    100% {
+        transform: translate(0,0);
     }
 }

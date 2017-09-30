@@ -118,9 +118,9 @@ body {
         background-image: url(./images/bio-color.jpg);
         background-size: cover; }
         .about .about-me-wrap .about-me-box .my-bio .piece {
-          transition: transform 2s; }
+          animation: fly-back 0.5s; }
         .about .about-me-wrap .about-me-box .my-bio .fly-away {
-          transform: translateX(-500px); }
+          animation: fly 10s; }
       .about .about-me-wrap .about-me-box p {
         color: #fff; }
 
@@ -223,5 +223,19 @@ body {
     transform: translateX(0px); }
   100% {
     transform: translateX(-30px); } }
+@keyframes fly {
+  0% {
+    transform: translate(0, 0); }
+  5% {
+    transform: translate(-50px, -30px); }
+  7% {
+    transform: translate(-1000px, -30px); }
+  100% {
+    transform: translate(-1000px, -30px); } }
+@keyframes fly-back {
+  0% {
+    transform: translate(-1000px, -30px); }
+  100% {
+    transform: translate(0, 0); } }
 
 /*# sourceMappingURL=App.css.map */

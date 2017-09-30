@@ -14,6 +14,8 @@ const About = React.createClass({
 
         setTimeout(function(){
             const piece = new Pieces(document.querySelector('.my-bio'), "./bio.jpg");
+            flyAway(false,0);
+            flyAway(true,1);
             window.addEventListener('mousemove', function(e){
                 const x = getMousePos(e).x;
                 const y = getMousePos(e).y;
@@ -24,10 +26,10 @@ const About = React.createClass({
                 const className = document.querySelector('.piece').className;
                 if(x > left && x < right && y > top && y < bottom
                      && className === "piece"){
-                    flyAway(false);
+                    flyAway(false,1);
                 }else if((x < left || x > right || y < top || y > bottom)
                      && className === "piece fly-away"){
-                    flyAway(true);
+                    flyAway(true,1);
                 }
             });
         },100);
@@ -54,14 +56,14 @@ const About = React.createClass({
 });
 
 
-function flyAway(flyBack){
+function flyAway(flyBack,isRandom){
     const photoPieces = document.querySelectorAll('.piece');
     for(let i = 0; i < photoPieces.length; i++){
         (function(i,photoPieces,flyBack){
             setTimeout(function(){
                 flyBack ? photoPieces[i].className = "piece" :
                 photoPieces[i].className = "piece fly-away";
-            }, Math.random()*100);
+            }, Math.random()*100*isRandom);
         })(i,photoPieces,flyBack);
     }
 }
