@@ -22,10 +22,12 @@ const About = React.createClass({
                 const left = getElementPos('.my-bio').left;
                 const right = getElementPos('.my-bio').right;
                 const className = document.querySelector('.piece').className;
-                if(x > left && x < right && y > top && y < bottom && className === "piece"){
+                if(x > left && x < right && y > top && y < bottom
+                     && className === "piece"){
                     flyAway(false);
-                }else if((x < left || x > right || y < top || y > bottom) && className === "piece fly-away"){
-                    setTimeout(flyAway(true),1000);
+                }else if((x < left || x > right || y < top || y > bottom)
+                     && className === "piece fly-away"){
+                    flyAway(true);
                 }
             });
         },100);
@@ -59,9 +61,8 @@ function flyAway(flyBack){
             setTimeout(function(){
                 flyBack ? photoPieces[i].className = "piece" :
                 photoPieces[i].className = "piece fly-away";
-            }, Math.random()*500);
+            }, Math.random()*100);
         })(i,photoPieces,flyBack);
-        
     }
 }
 
