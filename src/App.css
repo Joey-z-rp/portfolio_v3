@@ -115,7 +115,7 @@ body {
         width: 250px;
         height: 250px;
         margin: 0 25px 0 0;
-        background-image: url(./images/bio.jpg);
+        background-image: url(./images/bio-color.jpg);
         background-size: cover; }
         .about .about-me-wrap .about-me-box .my-bio .piece {
           transition: transform 2s; }

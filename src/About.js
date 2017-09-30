@@ -13,11 +13,22 @@ const About = React.createClass({
     componentDidMount(){
 
         setTimeout(function(){
-            const piece = new Pieces(document.querySelector('.my-bio'), "./bio-color.jpg");
-            document.querySelector('.my-bio').addEventListener('mouseover',() => {flyAway(false)},false);
-            document.querySelector('.my-bio').addEventListener('mouseout',() => {flyAway(true)},false);
-        },1500);
-       
+            const piece = new Pieces(document.querySelector('.my-bio'), "./bio.jpg");
+            window.addEventListener('mousemove', function(e){
+                const x = getMousePos(e).x;
+                const y = getMousePos(e).y;
+                const top = getElementPos('.my-bio').top;
+                const bottom = getElementPos('.my-bio').bottom;
+                const left = getElementPos('.my-bio').left;
+                const right = getElementPos('.my-bio').right;
+                const className = document.querySelector('.piece').className;
+                if(x > left && x < right && y > top && y < bottom && className === "piece"){
+                    flyAway(false);
+                }else if((x < left || x > right || y < top || y > bottom) && className === "piece fly-away"){
+                    setTimeout(flyAway(true),1000);
+                }
+            });
+        },100);
     },
 
     render: function(){
@@ -129,7 +140,8 @@ function getMousePos(e){
 }
 
 function getElementPos(className){
-
+    const element = document.querySelector(className);
+    return element.getBoundingClientRect();
 }
 
 
