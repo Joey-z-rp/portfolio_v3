@@ -19,8 +19,6 @@ const LoadingCircle = React.createClass({
   },
 
     componentWillReceiveProps(nextProps){
-
-      console.log('pass');
       window.cancelAnimationFrame(requestId);
       let canvas = this.canvas;
       let width = nextProps.width;
@@ -49,7 +47,7 @@ const LoadingCircle = React.createClass({
     }
 });
 
-function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite = false, radius=140, fontSize=80){
+function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite = false, radius=140, fontSize=90){
     canvas.width = width;
     canvas.height = height;
     var	ctx = canvas.getContext("2d"),
@@ -60,7 +58,7 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
   
     function backGroundCircle(){
       ctx.save();
-      ctx.strokeStyle = "#abcdef";
+      ctx.strokeStyle = "rgba(255,255,255,0.7)";
       ctx.lineWidth = 30;
       ctx.beginPath();
       ctx.arc(centerX,centerY,radius,0,Math.PI*2,true);
@@ -70,7 +68,7 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
   
     function foreGroundCircle(speed){
       ctx.save();
-      ctx.strokeStyle = "#1d2951";
+      ctx.strokeStyle = "rgba(29,41,81,1)";
       ctx.lineWidth = 30;
       ctx.beginPath();
       ctx.arc(centerX, centerY, radius, -Math.PI*0.5, -Math.PI*0.5+angle*speed, false);
@@ -80,7 +78,7 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
   
     function text(){
       ctx.save();
-      ctx.fillStyle = "#1d2951";
+      ctx.fillStyle = "rgba(255,255,255,1)";
       ctx.font = fontSize + "px " + "	Fjalla One";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";

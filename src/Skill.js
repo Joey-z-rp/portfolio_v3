@@ -15,6 +15,7 @@ const Skill = React.createClass({
         getInitialState: function(){
             return {
                 display: 'random',
+                className: "skill",
             };
         },
     
@@ -28,11 +29,13 @@ const Skill = React.createClass({
 
         displayRating: function(skill) {
             this.setState({display: skill});
+            // this.setState({className: "skill background-image-1"});
         },
     
         render: function(){
             return (
                 <div className="skill" style={this.props.styleContent}>
+                    <div className="skill-background"></div>
                     <h2>My skill set</h2>
                     <div className="skill-set-wrap row">
                         <div className="skill-set-left col-6">
