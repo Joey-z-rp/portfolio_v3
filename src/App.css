@@ -136,15 +136,18 @@ body {
   max-width: 1170px;
   margin: 0 auto;
   text-align: center;
-  font-size: 2.25rem;
-  padding: 1.3rem 0;
-  background-color: blue; }
+  font-size: 3rem;
+  padding: 3rem 0; }
   .skill .skill-set-wrap .skill-pic {
     width: 100px;
-    height: 100px; }
+    height: 100px;
+    float: left;
+    margin: 1rem; }
     .skill .skill-set-wrap .skill-pic img {
       width: 100%;
       height: 100%; }
+  .skill .skill-set-wrap .skill-set-right .loadingCircle {
+    margin-top: 3rem; }
 
 .link .links-wrap {
   max-width: 1170px;

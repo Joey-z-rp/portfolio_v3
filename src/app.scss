@@ -181,36 +181,27 @@ body {
         max-width: 1170px;
         margin: 0 auto;
         text-align: center;
-        font-size: 2.25rem;
-        padding: 1.3rem 0;
-        background-color: blue;
+        font-size: 3rem;
+        padding: 3rem 0;
 
         .skill-pic {
             width: 100px;
             height: 100px;
+            float: left;
+            margin: 1rem;
 
             img {
                 width: 100%;
                 height: 100%;
             }
+
         }
 
-        // .skill-set-upper-row, .skill-set-lower-row {
-        //     display: flex;
-        //     justify-content: space-evenly;
-        //     margin-bottom: 2rem;
-
-        //     p {
-        //         font-size: 1.9rem;
-        //         margin-bottom: 1rem;
-        //     }
-
-        //     canvas {
-        //         background-color: rgba(0,0,0,0);
-        //         width: 12.5rem;
-        //         height: 12.5rem;
-        //     }
-        // }
+        .skill-set-right {
+            .loadingCircle {
+                margin-top: 3rem;
+            }
+        }
     }
 }
 

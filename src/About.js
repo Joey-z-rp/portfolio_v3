@@ -7,7 +7,7 @@ const About = React.createClass({
 
     protoTypes : {
         handleTurn: PropTypes.func.isRequired,
-        styleContent: PropTypes.object.isRequired
+        styleContent: PropTypes.object.isRequired,
     },
 
     componentDidMount(){

@@ -13,10 +13,51 @@ const Skill = props => {
                     <div className="html5 skill-pic">
                         <img src="./html.png" />
                     </div>
+                    <div className="css3 skill-pic">
+                        <img src="./css.png" />
+                    </div>
+                    <div className="javascript skill-pic">
+                        <img src="./javascript.png" />
+                    </div>
+                    <div className="react skill-pic">
+                        <img src="./react.png" />
+                    </div>
+                    <div className="node skill-pic">
+                        <img src="./node.png" />
+                    </div>
+                    <div className="asp-net skill-pic">
+                        <img src="./asp-net.png" />
+                    </div>
+                    <div className="c-sharp skill-pic">
+                        <img src="./c-sharp.png" />
+                    </div>
+                    <div className="ruby skill-pic">
+                        <img src="./ruby.png" />
+                    </div>
+                    <div className="bootstrap skill-pic">
+                        <img src="./bootstrap.png" />
+                    </div>
+                    <div className="jquery skill-pic">
+                        <img src="./jquery.png" />
+                    </div>
+                    <div className="wordpress skill-pic">
+                        <img src="./wordpress.png" />
+                    </div>
+                    <div className="rails skill-pic">
+                        <img src="./rails.png" />
+                    </div>
+                    <div className="sass skill-pic">
+                        <img src="./sass.png" />
+                    </div>
+                    <div className="git skill-pic">
+                        <img src="./git.png" />
+                    </div>
                 </div>
                 <div className="skill-set-right col-6">
-                    <p>HTML</p>
-                    <LoadingCircle number={70} width={200} height={200} infinite={true} />
+                    <div className="loadingCircle">
+                        <p>HTML</p>
+                        <LoadingCircle number={70} width={310} height={310} infinite={true} />
+                    </div>
                 </div>
 
                 {/* <div className="skill-set-upper-row">

@@ -27,7 +27,7 @@ const LoadingCircle = React.createClass({
     }
 });
 
-function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite = false, radius=90, fontSize=60){
+function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite = false, radius=140, fontSize=80){
     canvas.width = width;
     canvas.height = height;
     var	ctx = canvas.getContext("2d"),
@@ -39,7 +39,7 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
     function backGroundCircle(){
       ctx.save();
       ctx.strokeStyle = "#abcdef";
-      ctx.lineWidth = 20;
+      ctx.lineWidth = 30;
       ctx.beginPath();
       ctx.arc(centerX,centerY,radius,0,Math.PI*2,true);
       ctx.stroke();
@@ -49,7 +49,7 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
     function foreGroundCircle(speed){
       ctx.save();
       ctx.strokeStyle = "#1d2951";
-      ctx.lineWidth = 20;
+      ctx.lineWidth = 30;
       ctx.beginPath();
       ctx.arc(centerX, centerY, radius, -Math.PI*0.5, -Math.PI*0.5+angle*speed, false);
       ctx.stroke();
