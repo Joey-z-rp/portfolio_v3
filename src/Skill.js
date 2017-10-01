@@ -75,8 +75,7 @@ const Skill = React.createClass({
                                 <img src="./git.png" />
                             </div>
                         </div>
-                        <div className="skill-set-right col-6">
-                            
+                        <div className="skill-set-right col-6">    
                                 {
                                     (() => {
                                         switch(this.state.display){
@@ -122,41 +121,73 @@ const Skill = React.createClass({
                                                         <LoadingCircle number={40} width={310} height={310} />
                                                     </div>
                                                 );
+                                            case 'asp':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>ASP.NET</p>
+                                                        <LoadingCircle number={30} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'bootstrap':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>Bootstrap</p>
+                                                        <LoadingCircle number={50} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'jquery':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>jQuery</p>
+                                                        <LoadingCircle number={50} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'ruby':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>Ruby</p>
+                                                        <LoadingCircle number={50} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'rails':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>Rails</p>
+                                                        <LoadingCircle number={40} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'sass':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>Sass</p>
+                                                        <LoadingCircle number={50} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'git':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>Git</p>
+                                                        <LoadingCircle number={60} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'cSharp':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>C#</p>
+                                                        <LoadingCircle number={40} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'wordpress':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>Wordpress</p>
+                                                        <LoadingCircle number={30} width={310} height={310} />
+                                                    </div>
+                                                );
                                         } 
                                     })()
-                                }
-                                
-                            
+                                }   
                         </div>
-        
-                        {/* <div className="skill-set-upper-row">
-                            <div>
-                                <p>HTML</p>
-                                <LoadingCircle number={70} width={200} height={200} infinite={true} />
-                            </div>
-                            <div>
-                                <p>CSS</p>
-                                <LoadingCircle number={70} width={200} height={200} />
-                            </div>
-                            <div>
-                                <p>Javascript</p>
-                                <LoadingCircle number={60} width={200} height={200} />
-                            </div>
-                        </div>
-                        <div className="skill-set-lower-row">
-                            <div>
-                                <p>React</p>
-                                <LoadingCircle number={50} width={200} height={200} />
-                            </div>
-                            <div>
-                                <p>Node.js</p>
-                                <LoadingCircle number={40} width={200} height={200} />
-                            </div>
-                            <div>
-                                <p>ASP.NET</p>
-                                <LoadingCircle number={40} width={200} height={200} />
-                            </div>
-                        </div> */}
                     </div>
                     <NavMenu handleTurn={this.props.handleTurn} currentPage="skill"/>
                 </div>
