@@ -1,12 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+let x=0;
+
 const LoadingCircle = React.createClass({
     protoTypes: {
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
         number: PropTypes.number.isRequired,
         infinite: PropTypes.bool,
+    },
+
+    getInitialState: function(){
+      return {
+          number: this.props.number,
+      };
+  },
+
+    componentWillReceiveProps(){
+      x++;
+      this.setState({number: x,});
+      let canvas = this.canvas;
+      let width = this.props.width;
+      let height = this.props.height;
+      let number = this.props.number;
+      let isInfinite = this.props.infinite;
+      setTimeout(() => {circleLoading(canvas, number, width, height,isInfinite)},100);
     },
 
     componentDidMount() {
@@ -85,6 +104,7 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
           speed += 0.5;
         }
       }
+      console.log('run');
     }())
   }
 
