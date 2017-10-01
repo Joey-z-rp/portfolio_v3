@@ -58,9 +58,9 @@ const HomePage = React.createClass({
             <div className="home" style={this.props.styleContent} ref={ (div) => this.div = div}>
                 { this.state.typing1 ? <Typist 
                     className="typing-animation-1 typing-animation"
-                    startDelay={2000} 
-                    avgTypingDelay={50} 
-                    stdTypingDelay={120} 
+                    startDelay={1000} 
+                    avgTypingDelay={60} 
+                    stdTypingDelay={80} 
                     cursor={{
                         show: true,
                         blink: true,
@@ -71,19 +71,19 @@ const HomePage = React.createClass({
                     delayGenerator={
                         function(mean, std, {line, lineIdx, charIdx, defDelayGenerator}) {
                         if (lineIdx === 0 && charIdx === line.length - 1) {
-                            return 1000;
+                            return 500;
                         }
                         if (lineIdx === 1 && charIdx === line.length - 1) {
-                            return 1000;
+                            return 500;
                         }
                         if (lineIdx === 2 && charIdx === line.length - 1) {
-                            return 1000;
+                            return 500;
                         }
                         if (lineIdx === 3 && charIdx === line.length - 1) {
-                            return 1000;
+                            return 500;
                         }
                         if (lineIdx === 4 && charIdx === line.length - 1) {
-                            return 1000;
+                            return 500;
                         }
                         return defDelayGenerator();
                         }
@@ -102,9 +102,9 @@ const HomePage = React.createClass({
 
                 { this.state.typing2 ? <Typist 
                     className="typing-animation-2 typing-animation"
-                    startDelay={1000} 
+                    startDelay={500} 
                     avgTypingDelay={50} 
-                    stdTypingDelay={100} 
+                    stdTypingDelay={80} 
                     cursor={{
                         show: true,
                         blink: true,
@@ -118,7 +118,7 @@ const HomePage = React.createClass({
                             return 1000;
                         }
                         if (lineIdx === 1 && charIdx === line.length - 1) {
-                            return 2000;
+                            return 1000;
                         }
                         return defDelayGenerator();
                         }
@@ -132,8 +132,8 @@ const HomePage = React.createClass({
                 { this.state.typing3 ? <Typist 
                     className="typing-animation-3 typing-animation"
                     startDelay={1000} 
-                    avgTypingDelay={80} 
-                    stdTypingDelay={100} 
+                    avgTypingDelay={70} 
+                    stdTypingDelay={80} 
                     cursor={{
                         show: true,
                         blink: true,
@@ -168,8 +168,8 @@ const HomePage = React.createClass({
                 { this.state.typing4 ? <Typist 
                     className="typing-animation-4 typing-animation"
                     startDelay={1000} 
-                    avgTypingDelay={150} 
-                    stdTypingDelay={60} 
+                    avgTypingDelay={80} 
+                    stdTypingDelay={80} 
                     cursor={{
                         show: true,
                         blink: true,

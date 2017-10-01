@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-var animation;
+var animationId;
+
 const ParticleImage = React.createClass({
     protoTypes: {
         width: PropTypes.number.isRequired,
@@ -19,17 +20,17 @@ const ParticleImage = React.createClass({
         let image = this.img;
         let width = this.props.width;
         let height = this.props.height;
-        setTimeout(() => {particleImage(canvas, image, width, height, animation)},1200);
+        setTimeout(() => {particleImage(canvas, image, width, height)},1200);
 	},
 	
 	componentWillUnmount(){
-
-		window.cancelAnimationFrame(animation);	
+		console.log('unmount');
+		window.cancelAnimationFrame(animationId);
 	},
     
     render: function(){
         return (
-            <div>
+            <div className="particle-image">
                 <canvas ref={(can) => {this.canvas = can}} >
                     Sorry! Your browser does not support canvas.
                 </canvas>
@@ -39,7 +40,7 @@ const ParticleImage = React.createClass({
     }
 });
 
-function particleImage(canvas, image, width, height, animationFunction){
+function particleImage(canvas, image, width, height){
 	var img = image,
 		w = canvas.width = width,
 		h = canvas.height = height,
@@ -84,7 +85,7 @@ function particleImage(canvas, image, width, height, animationFunction){
 
 	Shape.prototype.getParticles = function(ctx){
 		ctx.save();
-	  ctx.drawImage(img, 0, 0, w, h);
+	  	ctx.drawImage(img, 0, 0, w, h);
 		ctx.restore();
 		var data = ctx.getImageData(0, 0, w, h).data;
 
@@ -110,17 +111,15 @@ function particleImage(canvas, image, width, height, animationFunction){
 	var shape = new Shape();
 	shape.getParticles(ctx);
 
-	if(false){
+
+	function draw(){
+		ctx.clearRect(0, 0, w, h);
 		shape.display(ctx);
-	}else{
-		(function draw(){
-			ctx.clearRect(0, 0, w, h);
-			shape.display(ctx);
-			// console.log('particle');
-			animation=window.requestAnimationFrame(draw);
-			console.log(animation);
-		}())
+		animationId = window.requestAnimationFrame(draw);
+		console.log(image.src);
 	}
+	animationId = window.requestAnimationFrame(draw);
+
 }
 
 
