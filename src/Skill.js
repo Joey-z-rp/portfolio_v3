@@ -11,6 +11,12 @@ const Skill = React.createClass({
             handleTurn: PropTypes.func.isRequired,
             styleContent: PropTypes.object.isRequired
         },
+
+        getInitialState: function(){
+            return {
+                display: 'html',
+            };
+        },
     
         componentDidMount(){
     
@@ -70,10 +76,57 @@ const Skill = React.createClass({
                             </div>
                         </div>
                         <div className="skill-set-right col-6">
-                            <div className="loadingCircle">
-                                <SwitchingHeader />
-                                <LoadingCircle number={70} width={310} height={310} infinite={true} />
-                            </div>
+                            
+                                {
+                                    (() => {
+                                        switch(this.state.display){
+                                            case 'random':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <SwitchingHeader />
+                                                        <LoadingCircle number={70} width={310} height={310} infinite={true} />
+                                                    </div>
+                                                );
+                                            case 'html':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>HTML</p>
+                                                        <LoadingCircle number={70} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'css':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>CSS</p>
+                                                        <LoadingCircle number={70} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'js':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>Javascript</p>
+                                                        <LoadingCircle number={60} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'react':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>React</p>
+                                                        <LoadingCircle number={50} width={310} height={310} />
+                                                    </div>
+                                                );
+                                            case 'node':
+                                                return (
+                                                    <div className="loadingCircle">
+                                                        <p>Node.js</p>
+                                                        <LoadingCircle number={40} width={310} height={310} />
+                                                    </div>
+                                                );
+                                        } 
+                                    })()
+                                }
+                                
+                            
                         </div>
         
                         {/* <div className="skill-set-upper-row">
