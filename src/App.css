@@ -140,8 +140,11 @@ body {
 .background-image-1 {
   background-image: url(./images/bg-web.jpg) !important; }
 
+.background-image-2 {
+  background-image: url(./images/bg-web-2.jpg) !important; }
+
 .skill {
-  transition: all 1s;
+  transition: all 1s ease-in-out;
   background-image: url(./images/bg-front-end.jpg);
   background-repeat: no-repeat;
   background-size: cover; }

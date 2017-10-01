@@ -29,12 +29,33 @@ const Skill = React.createClass({
 
         displayRating: function(skill) {
             this.setState({display: skill});
-            // this.setState({className: "skill background-image-1"});
+            if(skill === 'html' || 
+                skill === "css" || 
+                skill === "js" || 
+                skill === "react" || 
+                skill === "git"){
+                this.setState({className: "skill"});
+            }
+            if(skill === 'bootstrap' || 
+                skill === "jquery" || 
+                skill === "sass" || 
+                skill === "ruby" || 
+                skill === "node"){
+                this.setState({className: "skill background-image-1"});
+            }
+            if(skill === 'cSharp' || 
+                skill === 'rails' || 
+                skill ==='asp' || 
+                skill === 'wordpress')
+            {
+                this.setState({className: "skill background-image-2"});
+            }
+            
         },
     
         render: function(){
             return (
-                <div className="skill" style={this.props.styleContent}>
+                <div className={this.state.className} style={this.props.styleContent}>
                     <div className="skill-background"></div>
                     <h2>My skill set</h2>
                     <div className="skill-set-wrap row">
