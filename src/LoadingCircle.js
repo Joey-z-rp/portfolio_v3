@@ -15,7 +15,7 @@ const LoadingCircle = React.createClass({
         let height = this.props.height;
         let number = this.props.number;
         let isInfinite = this.props.infinite;
-        setTimeout(() => {circleLoading(canvas, number, width, height,isInfinite)},1200);
+        setTimeout(() => {circleLoading(canvas, number, width, height,isInfinite)},100);
     },
     
     render: function(){
