@@ -6,6 +6,7 @@ const LoadingCircle = React.createClass({
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
         number: PropTypes.number.isRequired,
+        infinite: PropTypes.bool,
     },
 
     componentDidMount() {
@@ -13,7 +14,8 @@ const LoadingCircle = React.createClass({
         let width = this.props.width;
         let height = this.props.height;
         let number = this.props.number;
-        setTimeout(() => {circleLoading(canvas, number, width, height)},1200);
+        let isInfinite = this.props.infinite;
+        setTimeout(() => {circleLoading(canvas, number, width, height,isInfinite)},1200);
     },
     
     render: function(){
@@ -25,7 +27,7 @@ const LoadingCircle = React.createClass({
     }
 });
 
-function circleLoading(canvas, targetNumber, width=200, height=200, radius=90, fontSize=60){
+function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite = false, radius=90, fontSize=60){
     canvas.width = width;
     canvas.height = height;
     var	ctx = canvas.getContext("2d"),
@@ -70,10 +72,18 @@ function circleLoading(canvas, targetNumber, width=200, height=200, radius=90, f
       backGroundCircle();
       foreGroundCircle(speed);
       text();
-      if (speed > targetNumber){
-        return
-      }else {
-        speed += 0.5;
+      if (isInfinite){
+        if(speed >= 100){
+          speed = 0;
+        }else {
+          speed += 0.9;
+        }
+      }else if(!isInfinite){
+        if(speed >= targetNumber){
+          return;
+        }else {
+          speed += 0.5;
+        }
       }
     }())
   }

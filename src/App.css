@@ -137,18 +137,14 @@ body {
   margin: 0 auto;
   text-align: center;
   font-size: 2.25rem;
-  padding: 1.3rem 0; }
-  .skill .skill-set-wrap .skill-set-upper-row, .skill .skill-set-wrap .skill-set-lower-row {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 2rem; }
-    .skill .skill-set-wrap .skill-set-upper-row p, .skill .skill-set-wrap .skill-set-lower-row p {
-      font-size: 1.9rem;
-      margin-bottom: 1rem; }
-    .skill .skill-set-wrap .skill-set-upper-row canvas, .skill .skill-set-wrap .skill-set-lower-row canvas {
-      background-color: #fff;
-      width: 12.5rem;
-      height: 12.5rem; }
+  padding: 1.3rem 0;
+  background-color: blue; }
+  .skill .skill-set-wrap .skill-pic {
+    width: 100px;
+    height: 100px; }
+    .skill .skill-set-wrap .skill-pic img {
+      width: 100%;
+      height: 100%; }
 
 .link .links-wrap {
   max-width: 1170px;
@@ -173,12 +169,12 @@ body {
   .link .links-wrap #codepen-canvas {
     width: 600px; }
 
-.nav {
+.navigation {
   position: fixed;
   right: -7rem;
   top: 50%;
   transform: translateY(-50%); }
-  .nav .btn {
+  .navigation .btn-navigation {
     font-family: 'Fjalla One', sans-serif;
     font-size: 2rem;
     color: #fff;
@@ -192,7 +188,7 @@ body {
     cursor: pointer;
     transition: all 0.8s ease;
     opacity: 0.4; }
-    .nav .btn:hover {
+    .navigation .btn-navigation:hover {
       transform: translateX(-7rem);
       opacity: 1; }
 

@@ -8,11 +8,21 @@ const Skill = props => {
     return (
         <div className="skill" style={props.styleContent}>
             <h2>My skill set</h2>
-            <div className="skill-set-wrap">
-                <div className="skill-set-upper-row">
+            <div className="skill-set-wrap row">
+                <div className="skill-set-left col-6">
+                    <div className="html5 skill-pic">
+                        <img src="./html.png" />
+                    </div>
+                </div>
+                <div className="skill-set-right col-6">
+                    <p>HTML</p>
+                    <LoadingCircle number={70} width={200} height={200} infinite={true} />
+                </div>
+
+                {/* <div className="skill-set-upper-row">
                     <div>
                         <p>HTML</p>
-                        <LoadingCircle number={70} width={200} height={200} />
+                        <LoadingCircle number={70} width={200} height={200} infinite={true} />
                     </div>
                     <div>
                         <p>CSS</p>
@@ -36,7 +46,7 @@ const Skill = props => {
                         <p>ASP.NET</p>
                         <LoadingCircle number={40} width={200} height={200} />
                     </div>
-                </div>
+                </div> */}
             </div>
             <NavMenu handleTurn={props.handleTurn} currentPage="skill"/>
         </div>

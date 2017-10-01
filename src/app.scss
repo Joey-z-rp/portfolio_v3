@@ -183,23 +183,34 @@ body {
         text-align: center;
         font-size: 2.25rem;
         padding: 1.3rem 0;
+        background-color: blue;
 
-        .skill-set-upper-row, .skill-set-lower-row {
-            display: flex;
-            justify-content: space-evenly;
-            margin-bottom: 2rem;
+        .skill-pic {
+            width: 100px;
+            height: 100px;
 
-            p {
-                font-size: 1.9rem;
-                margin-bottom: 1rem;
-            }
-
-            canvas {
-                background-color: #fff;
-                width: 12.5rem;
-                height: 12.5rem;
+            img {
+                width: 100%;
+                height: 100%;
             }
         }
+
+        // .skill-set-upper-row, .skill-set-lower-row {
+        //     display: flex;
+        //     justify-content: space-evenly;
+        //     margin-bottom: 2rem;
+
+        //     p {
+        //         font-size: 1.9rem;
+        //         margin-bottom: 1rem;
+        //     }
+
+        //     canvas {
+        //         background-color: rgba(0,0,0,0);
+        //         width: 12.5rem;
+        //         height: 12.5rem;
+        //     }
+        // }
     }
 }
 
@@ -239,12 +250,12 @@ body {
     }
 }
 
-.nav {
+.navigation {
     position: fixed;
     right: -7rem;
     top: 50%;
     transform: translateY(-50%);
-    .btn {
+    .btn-navigation {
         font-family: 'Fjalla One', sans-serif;
         font-size: 2rem;
         color: #fff;

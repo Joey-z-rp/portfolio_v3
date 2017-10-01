@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 
 const NavMenu = props => {
     return (
-        <div className="nav">
+        <div className="navigation">
             { props.currentPage === "about" ? null : <button 
-                className="btn-about btn" 
+                className="button-about btn-navigation" 
                 onClick={() => {props.handleTurn(props.currentPage, "about")}}>
                 About Me
             </button> }
             { props.currentPage === "skill" ? null : <button 
-                className="btn-skill btn" 
+                className="button-skill btn-navigation" 
                 onClick={() => {props.handleTurn(props.currentPage, "skill")}}>
                 Skillset
             </button> }
             { props.currentPage === "link" ? null : <button 
-                className="btn-link btn" 
+                className="button-link btn-navigation" 
                 onClick={() => {props.handleTurn(props.currentPage, "link")}}>
                 Contact
             </button> }
