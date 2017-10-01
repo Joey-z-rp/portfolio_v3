@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 let x=0;
+let requestId=null;
 
 const LoadingCircle = React.createClass({
     protoTypes: {
@@ -17,15 +18,17 @@ const LoadingCircle = React.createClass({
       };
   },
 
-    componentWillReceiveProps(){
-      x++;
-      this.setState({number: x,});
+    componentWillReceiveProps(nextProps){
+
+      console.log('pass');
+      window.cancelAnimationFrame(requestId);
       let canvas = this.canvas;
-      let width = this.props.width;
-      let height = this.props.height;
-      let number = this.props.number;
-      let isInfinite = this.props.infinite;
-      setTimeout(() => {circleLoading(canvas, number, width, height,isInfinite)},100);
+      let width = nextProps.width;
+      let height = nextProps.height;
+      let number = nextProps.number;
+      let isInfinite = nextProps.infinite;
+      circleLoading(canvas, number, width, height,isInfinite);
+
     },
 
     componentDidMount() {
@@ -34,7 +37,7 @@ const LoadingCircle = React.createClass({
         let height = this.props.height;
         let number = this.props.number;
         let isInfinite = this.props.infinite;
-        setTimeout(() => {circleLoading(canvas, number, width, height,isInfinite)},100);
+        setTimeout(() => {circleLoading(canvas, number, width, height,isInfinite);},1000);
     },
     
     render: function(){
@@ -85,8 +88,8 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
       ctx.restore();
     }
   
-    (function loading(){
-      window.requestAnimationFrame(loading);
+    function loading(){
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       backGroundCircle();
       foreGroundCircle(speed);
@@ -104,8 +107,11 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
           speed += 0.5;
         }
       }
-      console.log('run');
-    }())
+      requestId = window.requestAnimationFrame(loading);
+    }
+
+    requestId = window.requestAnimationFrame(loading);
+
   }
 
 export default LoadingCircle;
