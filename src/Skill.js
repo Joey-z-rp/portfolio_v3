@@ -36,48 +36,51 @@ const Skill = React.createClass({
                     <h2>My skill set</h2>
                     <div className="skill-set-wrap row">
                         <div className="skill-set-left col-6">
-                            <div className="html5 skill-pic" onClick={() => this.displayRating('html') } >
+                            <div className="html5 skill-pic" onClick={() => this.displayRating('html')} >
                                 <img src="./html.png" />
                             </div>
-                            <div className="css3 skill-pic" onClick={() => this.displayRating('css') } >
+                            <div className="css3 skill-pic" onClick={() => this.displayRating('css')} >
                                 <img src="./css.png" />
                             </div>
-                            <div className="javascript skill-pic" onClick={() => this.displayRating('js') } >
+                            <div className="javascript skill-pic" onClick={() => this.displayRating('js')} >
                                 <img src="./javascript.png" />
                             </div>
-                            <div className="react skill-pic">
-                                <img src="./react.png" />
-                            </div>
-                            <div className="node skill-pic">
-                                <img src="./node.png" />
-                            </div>
-                            <div className="asp-net skill-pic">
-                                <img src="./asp-net.png" />
-                            </div>
-                            <div className="c-sharp skill-pic">
-                                <img src="./c-sharp.png" />
-                            </div>
-                            <div className="ruby skill-pic">
-                                <img src="./ruby.png" />
-                            </div>
-                            <div className="bootstrap skill-pic">
-                                <img src="./bootstrap.png" />
-                            </div>
-                            <div className="jquery skill-pic">
-                                <img src="./jquery.png" />
-                            </div>
-                            <div className="wordpress skill-pic">
-                                <img src="./wordpress.png" />
-                            </div>
-                            <div className="rails skill-pic">
-                                <img src="./rails.png" />
-                            </div>
-                            <div className="sass skill-pic">
-                                <img src="./sass.png" />
-                            </div>
-                            <div className="git skill-pic">
+                            <div className="git skill-pic" onClick={() => this.displayRating('git')} >
                                 <img src="./git.png" />
                             </div>
+                            <div className="react skill-pic" onClick={() => this.displayRating('react')} >
+                                <img src="./react.png" />
+                            </div>
+                            <div className="bootstrap skill-pic" onClick={() => this.displayRating('bootstrap')} >
+                                <img src="./bootstrap.png" />
+                            </div>
+                            <div className="jquery skill-pic" onClick={() => this.displayRating('jquery')} >
+                                <img src="./jquery.png" />
+                            </div>
+                            <div className="sass skill-pic" onClick={() => this.displayRating('sass')} >
+                                <img src="./sass.png" />
+                            </div>
+                            <div className="ruby skill-pic" onClick={() => this.displayRating('ruby')} >
+                                <img src="./ruby.png" />
+                            </div>
+                            <div className="node skill-pic" onClick={() => this.displayRating('node')} >
+                                <img src="./node.png" />
+                            </div>
+                            <div className="c-sharp skill-pic" onClick={() => this.displayRating('cSharp')} >
+                                <img src="./c-sharp.png" />
+                            </div>
+                            <div className="rails skill-pic" onClick={() => this.displayRating('rails')} >
+                                <img src="./rails.png" />
+                            </div>
+                            <div className="asp-net skill-pic" onClick={() => this.displayRating('asp')} >
+                                <img src="./asp-net.png" />
+                            </div>
+                            <div className="wordpress skill-pic" onClick={() => this.displayRating('wordpress')} >
+                                <img src="./wordpress.png" />
+                            </div>
+
+
+
                         </div>
                         <div className="skill-set-right col-6">    
                                 {

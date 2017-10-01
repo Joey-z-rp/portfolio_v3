@@ -98,13 +98,13 @@ function circleLoading(canvas, targetNumber, width=200, height=200, isInfinite =
         if(speed >= 100){
           speed = 0;
         }else {
-          speed += 0.9;
+          speed += 1.8;
         }
       }else if(!isInfinite){
         if(speed >= targetNumber){
           return;
         }else {
-          speed += 0.5;
+          speed += 0.9;
         }
       }
       requestId = window.requestAnimationFrame(loading);
