@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ParticleImage from './ParticleImage';
 import NavMenu from './NavMenu';
 
+let mouseHandler = null;
 
 const Link = React.createClass({
     
@@ -18,11 +19,11 @@ const Link = React.createClass({
         },
     
         componentDidMount(){
-            window.addEventListener('mousemove', checkMouse.bind(this));
+            window.addEventListener('mousemove', mouseHandler =  checkMouse.bind(this));
         },
     
         componentWillUnmount(){
-
+            window.removeEventListener('mousemove', mouseHandler);
         },
     
         render: function(){
