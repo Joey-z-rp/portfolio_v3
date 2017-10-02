@@ -33,7 +33,7 @@ const Link = React.createClass({
                     <div className="link-background"></div>
                     <h2>Contact</h2>
                     <div className="links-wrap row">
-                        <div className="links-box col-6">
+                        <div className="links-box col-md-6">
                             <div className="prompt-box">
                                 <h4>{this.state.h3Content}</h4>
                                 <p>{this.state.pContent}</p>
@@ -49,7 +49,7 @@ const Link = React.createClass({
                                 </div>
                             </div>
                         </div>
-                        <div className="links-box col-6">
+                        <div className="links-box col-md-6">
                             <div className="row">
                                 <a className="col-6" href="https://github.com/Joey-z-rp" target="_blank">
                                     <div className="links-icon github">
@@ -67,14 +67,14 @@ const Link = React.createClass({
                                 </a>
                             </div>
                             <div className="row">
-                                <a className="col-6" href="https://codepen.io/Joey-z-rp/" target="_blank">
+                                <a className="col-md-6" href="https://codepen.io/Joey-z-rp/" target="_blank">
                                     <div className="links-icon codepen">
                                         <img src="./images/codepen.png" />
                                         {this.state.display === 'codepen' ? 
                                         <ParticleImage width={200} height={200} url="./images/codepen.png" /> : null }
                                     </div>
                                 </a>
-                                <a className="col-6" href="product_demo/index.html" target="_blank">
+                                <a className="col-md-6" href="product_demo/index.html" target="_blank">
                                     <div className="links-icon phone-demo">
                                         <img src="./images/phone.png" />
                                         {this.state.display === 'phone' ? 
@@ -117,7 +117,7 @@ function checkMouse(event){
         this.setState({
             display: "phone",
             h3Content: 'Product demo page',
-            pContent: 'A demo page made using HTML, CSS and plain Javascript.'
+            pContent: 'A demo page made using plain Javascript.'
         });
     }
 

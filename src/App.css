@@ -162,6 +162,11 @@ body {
     text-align: center;
     font-size: 3rem;
     padding: 3rem 0; }
+    .skill .skill-set-wrap .skill-box {
+      max-width: 1170px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
     .skill .skill-set-wrap .skill-pic {
       width: 100px;
       height: 100px;
@@ -201,7 +206,12 @@ body {
     margin: auto;
     font-size: 1.9rem;
     text-align: center;
-    padding-top: 1.3rem; }
+    padding-top: 1.3rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%); }
     .link .links-wrap .links-box .prompt-box, .link .links-wrap .links-box .email-box, .link .links-wrap .links-box .map-box {
       margin-top: 3rem;
       color: rgba(255, 255, 255, 0.7); }
@@ -215,15 +225,15 @@ body {
       color: #F81010; }
     .link .links-wrap .links-box .map-box div {
       margin-top: 1rem;
-      height: 200px; }
+      height: 13rem; }
       .link .links-wrap .links-box .map-box div iframe {
         width: 80%;
         height: 100%; }
     .link .links-wrap .links-box .row {
       margin-top: 4rem; }
     .link .links-wrap .links-box .links-icon {
-      width: 200px;
-      height: 200px;
+      width: 13rem;
+      height: 13rem;
       position: relative; }
       .link .links-wrap .links-box .links-icon img {
         width: 100%;
@@ -238,7 +248,9 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1; }
+        z-index: -1;
+        width: 13rem;
+        height: 13rem; }
 
 .navigation {
   position: fixed;
@@ -329,5 +341,20 @@ body {
     transform: rotateZ(0deg); }
   100% {
     transform: rotateZ(0deg); } }
+@media screen and (min-width: 1500px) {
+  html {
+    font-size: 20px; }
+    html .loadingCircle {
+      margin: 0 !important; }
+      html .loadingCircle canvas {
+        width: 400px;
+        height: 400px; }
+    html .skill-pic {
+      width: 110px !important;
+      height: 110px !important; }
+    html .about-me-wrap, html .skill-set-wrap, html .links-wrap {
+      max-width: 1400px !important; }
+    html .skill-box {
+      max-width: 1400px !important; } }
 
 /*# sourceMappingURL=App.css.map */
