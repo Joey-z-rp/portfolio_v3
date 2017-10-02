@@ -14,6 +14,8 @@ const Link = React.createClass({
         getInitialState: function(){
             return {
                 display: 'none',
+                h3Content: 'Check out my links',
+                pContent: 'Hover on the icons to find out more.'
             };
         },
     
@@ -31,8 +33,20 @@ const Link = React.createClass({
                     <h2>Contact</h2>
                     <div className="links-wrap row">
                         <div className="links-box col-6">
+                            <div className="prompt-box">
+                                <h4>{this.state.h3Content}</h4>
+                                <p>{this.state.pContent}</p>
+                            </div>
+                            <div className="email-box">
+                                <h4>Contact me:</h4>
+                                <a href="#">joey.z.rp@gmail.com</a>
+                            </div>
+                            <div className="map-box">
+                                <h4>Find me:</h4>
+                                <div dangerouslySetInnerHTML={ {__html: "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.7974879595463!2d144.95211351377802!3d-37.81821217975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4e17ccc9b3%3A0xec77cc2f289db7e6!2s120+Spencer+St%2C+Melbourne+VIC+3004!5e0!3m2!1szh-CN!2sau!4v1504237281147'  frameborder='0' style='border:0' allowfullscreen></iframe>"} }>
                             
-
+                                </div>
+                            </div>
                         </div>
                         <div className="links-box col-6">
                             <div className="row">
@@ -78,23 +92,43 @@ const Link = React.createClass({
 function checkMouse(event){
     const mousePos = getMousePos(event);
     if(isMouseOn(mousePos, '.github')){
-        this.setState({display: "github"});
+        this.setState({
+            display: "github",
+            h3Content: 'My Github page',
+            pContent: 'Commits show my commitment.'
+        });
     }
     if(isMouseOn(mousePos, '.linkedin')){
-        this.setState({display: "linkedin"});
+        this.setState({
+            display: "linkedin",
+            h3Content: 'My Linkedin profile',
+            pContent: 'Make new connection now.'
+        });
     }
     if(isMouseOn(mousePos, '.codepen')){
-        this.setState({display: "codepen"});
+        this.setState({
+            display: "codepen",
+            h3Content: 'My Codepen page',
+            pContent: 'Fun and fancy animations here.'
+        });
     }
     if(isMouseOn(mousePos, '.phone-demo')){
-        this.setState({display: "phone"});
+        this.setState({
+            display: "phone",
+            h3Content: 'Product demo page',
+            pContent: 'A demo page I made using HTML, CSS and plain Javascript.'
+        });
     }
 
     if(!isMouseOn(mousePos, '.github') && 
         !isMouseOn(mousePos, '.linkedin') && 
         !isMouseOn(mousePos, '.codepen') && 
         !isMouseOn(mousePos, '.phone-demo')){
-        this.setState({display: "none"});
+        this.setState({
+            display: "none",
+            h3Content: 'Check out my links',
+            pContent: 'Hover on the icons to find out more.'
+        });
     }
 }
 
