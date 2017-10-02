@@ -218,6 +218,10 @@ body {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+
+            .skill-set-left {
+                padding-top: 20px;
+            }
         }
 
         .skill-pic {
@@ -495,4 +499,33 @@ body {
             max-width: 1400px!important;
         }
     }
+}
+
+@media screen and (max-width: 1200px) {
+	html {
+        .skill-box {
+            margin-left: 30px;
+        }
+        .skill-pic {
+            width: 90px!important;
+            height: 90px!important;
+        }
+	}
+}
+
+@media screen and (max-width: 1070px) {
+	html {
+        font-size: 14px;
+        .my-bio {
+            width: 200px!important;
+            height: 200px!important;
+        }
+        .skill-box {
+            margin-left: 30px;
+        }
+        .skill-pic {
+            width: 80px!important;
+            height: 80px!important;
+        }
+	}
 }
