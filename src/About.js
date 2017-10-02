@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import NavMenu from './NavMenu';
 
 let picWidth = null;
-// let picHeight = getElementPos('.my-bio').bootom - getElementPos('.my-bio').top;
 const About = React.createClass({
 
     protoTypes : {
@@ -21,24 +20,12 @@ const About = React.createClass({
             picWidth = getElementPos('.my-bio').right - getElementPos('.my-bio').left;
         },100);
 
-        window.onresize = function(){
-            const currentWidth = getElementPos('.my-bio').right - getElementPos('.my-bio').left;
-            // const currentHeight = getElementPos('.my-bio').bootom - getElementPos('.my-bio').top;
-            if(currentWidth != picWidth){
-                const pieces = document.querySelectorAll('.piece');
-                for(let i=0; i < pieces.length; i++){
-                    pieces[i].parentNode.removeChild(pieces[i]);
-                }
-                let piece = new Pieces(document.querySelector('.my-bio'), "./images/bio.jpg");
-                flyAway(false,0);
-                flyAway(true,1);
-                picWidth = currentWidth;
-            }
-        }
+        window.addEventListener('resize', checkBioPicResize);
     },
 
     componentWillUnmount(){
         window.removeEventListener('mousemove',checkMouseOn);
+        window.removeEventListener('resize',checkBioPicResize);
     },
 
     render: function(){
@@ -60,6 +47,21 @@ const About = React.createClass({
         );
     }
 });
+
+
+function checkBioPicResize(){
+    const currentWidth = getElementPos('.my-bio').right - getElementPos('.my-bio').left;
+    if(currentWidth != picWidth){
+        const pieces = document.querySelectorAll('.piece');
+        for(let i=0; i < pieces.length; i++){
+            pieces[i].parentNode.removeChild(pieces[i]);
+        }
+        let piece = new Pieces(document.querySelector('.my-bio'), "./images/bio.jpg");
+        flyAway(false,0);
+        flyAway(true,1);
+        picWidth = currentWidth;
+    }
+}
 
 function checkMouseOn (e){
     const x = getMousePos(e).x;

@@ -363,7 +363,9 @@ body {
     margin-left: 30px; }
   html .skill-pic {
     width: 90px !important;
-    height: 90px !important; } }
+    height: 90px !important; }
+  html .loadingCircle {
+    transform: translateX(-50px); } }
 @media screen and (max-width: 1070px) {
   html {
     font-size: 14px; }
@@ -375,5 +377,26 @@ body {
     html .skill-pic {
       width: 80px !important;
       height: 80px !important; } }
+@media screen and (max-width: 950px) {
+  html {
+    font-size: 12px; }
+    html .skill-pic {
+      width: 70px !important;
+      height: 70px !important; }
+    html .loadingCircle canvas {
+      width: 18rem;
+      height: 18rem; } }
+@media screen and (max-width: 830px) {
+  html .my-bio {
+    width: 170px !important;
+    height: 170px !important; }
+  html .loadingCircle {
+    transform: translate(-50px, 40px); }
+  html .links-icon {
+    width: 11rem !important;
+    height: 11rem !important; }
+    html .links-icon .particle-image canvas {
+      width: 11rem !important;
+      height: 11rem !important; } }
 
 /*# sourceMappingURL=App.css.map */

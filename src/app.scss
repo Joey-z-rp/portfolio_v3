@@ -510,6 +510,9 @@ body {
             width: 90px!important;
             height: 90px!important;
         }
+        .loadingCircle {
+            transform: translateX(-50px);
+        }
 	}
 }
 
@@ -526,6 +529,45 @@ body {
         .skill-pic {
             width: 80px!important;
             height: 80px!important;
+        }
+	}
+}
+
+@media screen and (max-width: 950px) {
+	html {
+        font-size: 12px;
+        .skill-pic {
+            width: 70px!important;
+            height: 70px!important;
+        }
+        .loadingCircle {
+            canvas {
+                width: 18rem;
+                height: 18rem;
+            }
+        }
+	}
+}
+
+
+@media screen and (max-width: 830px) {
+	html {
+        .my-bio {
+            width: 170px!important;
+            height: 170px!important;
+        }
+        .loadingCircle {
+            transform: translate(-50px, 40px);
+        }
+        .links-icon {
+            width: 11rem!important;
+            height: 11rem!important;
+            .particle-image {
+                canvas {
+                    width: 11rem!important;
+                    height: 11rem!important;
+                }
+            }
         }
 	}
 }
