@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import ParticleImage from './ParticleImage';
 import NavMenu from './NavMenu';
 
-let handleMouseCheck=null;
-
+let mouseHandler = null;
 const Link = React.createClass({
     
         protoTypes : {
@@ -19,12 +18,11 @@ const Link = React.createClass({
         },
     
         componentDidMount(){
-            window.addEventListener('mousemove', handleMouseCheck=checkMouse.bind(this));
+            window.addEventListener('mousemove', mouseHandler =  checkMouse.bind(this));
         },
     
         componentWillUnmount(){
-            console.log('unmount link')
-            window.removeEventListener('mousemove',handleMouseCheck);
+            window.removeEventListener('mousemove', mouseHandler);
         },
     
         render: function(){
