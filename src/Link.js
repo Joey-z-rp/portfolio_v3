@@ -30,6 +30,7 @@ const Link = React.createClass({
         render: function(){
             return (
                 <div className="link" style={this.props.styleContent}>
+                    <div className="link-background"></div>
                     <h2>Contact</h2>
                     <div className="links-wrap row">
                         <div className="links-box col-6">
@@ -39,11 +40,11 @@ const Link = React.createClass({
                             </div>
                             <div className="email-box">
                                 <h4>Contact me:</h4>
-                                <a href="#">joey.z.rp@gmail.com</a>
+                                <a href="mailto:joey.z.rp@gmail.com">joey.z.rp@gmail.com</a>
                             </div>
                             <div className="map-box">
                                 <h4>Find me:</h4>
-                                <div dangerouslySetInnerHTML={ {__html: "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.7974879595463!2d144.95211351377802!3d-37.81821217975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4e17ccc9b3%3A0xec77cc2f289db7e6!2s120+Spencer+St%2C+Melbourne+VIC+3004!5e0!3m2!1szh-CN!2sau!4v1504237281147'  frameborder='0' style='border:0' allowfullscreen></iframe>"} }>
+                                <div dangerouslySetInnerHTML={ {__html: "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14148.82906159585!2d153.09385676954184!3d-27.556077250754907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915b50ac447a1f%3A0x502a35af3de9e30!2zV2lzaGFydCDmmIblo6vlhbDlt54gNDEyMg!5e0!3m2!1szh-CN!2sau!4v1506920802858' frameborder='0' style='border:0' allowfullscreen></iframe>"} }>
                             
                                 </div>
                             </div>
@@ -116,7 +117,7 @@ function checkMouse(event){
         this.setState({
             display: "phone",
             h3Content: 'Product demo page',
-            pContent: 'A demo page I made using HTML, CSS and plain Javascript.'
+            pContent: 'A demo page made using HTML, CSS and plain Javascript.'
         });
     }
 

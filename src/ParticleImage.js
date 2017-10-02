@@ -58,7 +58,7 @@ function particleImage(canvas, image, width, height){
 		  // '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50',
 		  // '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800',
 		  // '#FF5722'
-		  '#1d2951'
+		  '#e06518'
 		  ];
 		this.color = this.colorArray[Math.floor(Math.random() * this.colorArray.length)];
 		this.scale = 0;
