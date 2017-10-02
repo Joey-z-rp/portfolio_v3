@@ -15,7 +15,7 @@ const Link = React.createClass({
             return {
                 display: 'none',
                 h3Content: 'Check out my links',
-                pContent: 'Hover on the icons to find out more.'
+                pContent: 'Hover/hold on the icons to find out more.'
             };
         },
     
@@ -128,7 +128,7 @@ function checkMouse(event){
         this.setState({
             display: "none",
             h3Content: 'Check out my links',
-            pContent: 'Hover on the icons to find out more.'
+            pContent: 'Hover/hold on the icons to find out more.'
         });
     }
 }
