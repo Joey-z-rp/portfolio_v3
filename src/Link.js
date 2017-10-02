@@ -67,14 +67,14 @@ const Link = React.createClass({
                                 </a>
                             </div>
                             <div className="row">
-                                <a className="col-md-6" href="https://codepen.io/Joey-z-rp/" target="_blank">
+                                <a className="col-6" href="https://codepen.io/Joey-z-rp/" target="_blank">
                                     <div className="links-icon codepen">
                                         <img src="./images/codepen.png" />
                                         {this.state.display === 'codepen' ? 
                                         <ParticleImage width={200} height={200} url="./images/codepen.png" /> : null }
                                     </div>
                                 </a>
-                                <a className="col-md-6" href="product_demo/index.html" target="_blank">
+                                <a className="col-6" href="product_demo/index.html" target="_blank">
                                     <div className="links-icon phone-demo">
                                         <img src="./images/phone.png" />
                                         {this.state.display === 'phone' ? 

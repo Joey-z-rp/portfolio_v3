@@ -571,3 +571,55 @@ body {
         }
 	}
 }
+
+@media screen and (max-width: 768px) {
+	html {
+        .loadingCircle {
+            transform: translate(-20px, 0)!important;
+        }
+        .map-box {
+            display: none;
+        }
+        .links-box {
+            a {
+                display: flex;
+                justify-content: center;
+            }
+        }
+	}
+}
+
+@media screen and (max-width: 710px) {
+	html {
+        font-size: 10px;
+        .skill-pic {
+            width: 60px!important;
+            height: 60px!important;
+        }
+	}
+}
+
+@media screen and (max-width: 480px) {
+	html {
+        .home {
+            .button-wrapper{
+                bottom: 20%!important;
+                flex-wrap: wrap;
+                div {
+                    width: 100%;
+                    text-align: center;
+                    padding-top: 20px;
+                }
+            }
+        }
+        .my-bio {
+            width: 140px!important;
+            height: 140px!important;
+        }
+        .skill-pic {
+            width: 50px!important;
+            height: 50px!important;
+        }
+
+	}
+}
