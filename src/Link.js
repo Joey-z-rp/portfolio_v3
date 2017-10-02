@@ -74,7 +74,7 @@ const Link = React.createClass({
                                         <ParticleImage width={200} height={200} url="./images/codepen.png" /> : null }
                                     </div>
                                 </a>
-                                <a className="col-6" href="product page/index.html" target="_blank">
+                                <a className="col-6" href="product_demo/index.html" target="_blank">
                                     <div className="links-icon phone-demo">
                                         <img src="./images/phone.png" />
                                         {this.state.display === 'phone' ? 

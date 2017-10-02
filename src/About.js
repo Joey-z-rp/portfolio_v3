@@ -13,7 +13,7 @@ const About = React.createClass({
     componentDidMount(){
 
         setTimeout(function(){
-            const piece = new Pieces(document.querySelector('.my-bio'), "./bio.jpg");
+            const piece = new Pieces(document.querySelector('.my-bio'), "./images/bio.jpg");
             flyAway(false,0);
             flyAway(true,1);
             window.addEventListener('mousemove', checkMouseOn);
@@ -28,7 +28,7 @@ const About = React.createClass({
         return (
             <div className="about" style={this.props.styleContent} ref={ (div) => this.div = div} >
                 <h2>My past and future</h2>
-                <video autoPlay muted loop><source src="./backgroundVideoMinified.mp4" /></video>
+                <video autoPlay muted loop><source src="./video/backgroundVideoMinified.mp4" /></video>
                 <div className="video-layer"></div>
                 <div className="about-me-wrap">
                     <div className="about-me-box">

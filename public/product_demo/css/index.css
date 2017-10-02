@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css?font-variant-alternates: mily=Exo');
+
+* {
+	margin:0;
+	padding: 0;
+	border:0;
+}
+
+body {
+	min-width: 1250px;
+	font-family: 'Exo', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrap {
+	position: relative;
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* header */
+
+header {
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	background: #fff;
+	transition: background 1s;
+	z-index:9;
+}
+
+.header-black {
+	background: rgba(10,10,10,0.5);
+	color: #fff;
+}
+
+.header_logo {
+	width:100px;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	left:20px;
+	top:50%;
+	margin-top: -20px;
+	padding-left: 50px;
+	background: url(../images/logo.png) no-repeat;
+	font-size: 22px;
+	transition: color 1s;
+}
+
+.header_logo:hover {
+	color:red;
+	cursor: pointer;
+}
+
+.header_nav {
+	height: 40px;	
+	line-height: 40px;
+	position: absolute;
+	right:20px;
+	top:50%;
+	margin-top: -20px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.header_nav-item {
+	width:120px;
+	float: left;
+	line-height: 40px;
+	position: relative;
+	transition: all 1s;
+}
+
+.header_nav-item-active {
+	color: red;
+}
+
+.header_nav-item:hover {
+	color:red;
+	cursor: pointer;
+}
+
+.header_nav-item-underline {
+	width: 100%;
+	height: 3px;
+	background: red;
+	position: absolute;
+	bottom: -1px;
+	left:0;
+	transition: all 1s;
+}
+
+.header_nav-item-buy {
+	background:#000;
+	color: #fff;
+	border-radius: 4px;
+	font-size: 18px;
+	line-height: 40px;
+	width: 120px;
+	margin-left: 15px;
+}
+
+.header_nav-item-buy:hover {
+	cursor:pointer;
+}
+
+/* screen1 */
+
+.screen1 {
+	width: 100%;
+	height: 650px;
+	background: url(../images/bg-screen-1.png) no-repeat;
+	background-size: cover;
+}
+
+.screen1_header {
+	color:#777;
+	font-size: 34px;
+	line-height: 34px;
+	height: 34px;
+	position: relative;
+	top: 120px;
+}
+
+.screen1_header b {
+	color:red;
+	font-size: 48px;
+}
+
+.screen1_phone {
+	width: 100%;
+	height: 266px;
+	background: url(../images/screen-1-phone.png) no-repeat;
+	background-size: cover;
+	position: relative;
+	top:200px;
+	z-index: 2;
+}
+
+.screen1_shadow {
+	width: 1079px;
+	height: 360px;
+	background: url(../images/screen-1-shadow.png);
+	background-size: cover;
+	margin: 0 auto;
+	position: relative;
+	bottom: 30px;
+}
+
+/* screen2 */
+
+.screen2 {
+	width: 100%;
+	height: 800px;
+	background: rgb(250,250,250);
+	overflow: hidden;
+}
+
+.screen2_header {
+	color:red;
+	font-size: 34px;
+	line-height: 34px;
+	height: 34px;
+	position: relative;
+	top: 100px;
+}
+
+.screen2_subheader {
+	color:#000;
+	font-size: 18px;
+	line-height: 20px;
+	height: 40px;
+	position: relative;
+	top: 170px;
+}
+
+.screen2_phone {
+	width: 836px;
+	height: 786px;
+	margin:0 auto;
+	background: url(../images/bg-screen-2.png) no-repeat;
+	background-size: cover;
+	position: relative;
+	top:240px;
+}
+
+.screen2_feature-1 {
+	height: 21px;
+	font-size: 18px;
+	line-height: 21px;
+	padding-right: 120px;
+	position: absolute;
+	left: 28px;
+	top: 458px;
+	background: url(../images/icon-point-right.png) no-repeat;
+	background-position: 100px 0;
+}
+
+.screen2_feature-2 {
+	height: 21px;
+	font-size: 18px;
+	line-height: 21px;
+	padding-left: 115px;
+	position: absolute;
+	right: 206px;
+	top: 353px;
+	background: url(../images/icon-point-left.png) no-repeat;
+}
+
+.screen2_feature-3 {
+	height: 21px;
+	font-size: 18px;
+	line-height: 21px;
+	padding-left: 115px;
+	position: absolute;
+	right: 142px;
+	top: 620px;
+	background: url(../images/icon-point-left.png) no-repeat;
+}
+
+/* screen3 */
+
+.screen3 {
+	width: 100%;
+	height: 700px;
+	background: rgb(167,19,22);
+	overflow: hidden;
+	color: #fff;
+}
+
+.screen3_box {
+	width: 1050px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.screen3_header {
+	font-size: 34px;
+	line-height: 34px;
+	height: 34px;
+	position: absolute;
+	left: 0;
+	top: 80px;
+}
+
+.screen3_subheader {
+	font-size: 18px;
+	line-height: 20px;
+	height: 40px;
+	position: absolute;
+	top: 140px;
+	left: 0;
+	text-align: left;
+}
+
+.screen3_feature {
+	width: 294px;
+	position: absolute;
+	left: 0;
+	top: 340px;
+}
+
+.screen3_feature-item {
+	width: 120px;
+	height: 100px;
+	margin:0 25px 25px 0;
+	float: left;
+	border:1px solid rgba(255,255,255,0.4);
+	transition: transform 1s;
+}
+
+.screen3_feature-item:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.screen3_feature-item-number {
+	font-size: 36px;
+	margin: 16px 0 10px 0;
+}
+
+.screen3_feature-item-desc {
+	font-size: 12px;
+}
+
+.screen3_phone {
+	width:656px;
+	height: 810px;
+	background: url(../images/bg-screen-3.png) no-repeat;
+	background-size: cover;
+	position: absolute;
+	right: 0;
+	top:150px;
+}
+
+/* screen4 */
+
+.screen4 {
+	width: 100%;
+	height: 700px;
+	background: #fff;
+}
+
+.screen4_header {
+	color:red;
+	font-size: 34px;
+	line-height: 34px;
+	height: 34px;
+	position: relative;
+	top: 90px;
+}
+
+.screen4_subheader {
+	font-size: 18px;
+	line-height: 20px;
+	height: 40px;
+	position: relative;
+	top: 140px;
+}
+
+.screen4_phonebox {
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	top: 220px;
+}
+
+.screen4_phonebox-phone {
+	width: 275px;
+	height: 270px;
+	float: left;
+	background-size: 204px 230px;
+	background-position: 47px 0;
+}
+
+.screen4_phonebox-phone1 {
+	background-image: url(../images/phone-1.png);
+	background-repeat: no-repeat;
+}
+
+.screen4_phonebox-phone2 {
+	background-image: url(../images/phone-2.png);
+	background-repeat: no-repeat;
+}
+
+.screen4_phonebox-phone3 {
+	background-image: url(../images/phone-3.png);
+	background-repeat: no-repeat;
+}
+
+.screen4_phonebox-phone4 {
+	background-image: url(../images/phone-4.png);
+	background-repeat: no-repeat;
+}
+
+.screen4_phonebox-phone-color {
+	margin-top: 260px;
+}
+
+.screen4_phonebox-phone-version {
+	font-size: 12px;
+	color: rgba(100,100,100,0.5)
+}
+
+/* screen5 */
+
+.screen5 {
+	width: 100%;
+	height: 700px;
+	background: rgb(217,221,225);
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.screen5_header {
+	color:red;
+	font-size: 34px;
+	line-height: 34px;
+	height: 34px;
+	position: relative;
+	top: 150px;
+}
+
+.screen5_subheader {
+	font-size: 18px;
+	line-height: 20px;
+	height: 40px;
+	position: relative;
+	top: 200px;
+}
+
+.screen5_image {
+	width: 1700px;
+	height: 362px;
+	position: absolute;
+	bottom:-90px; 
+	left: 50%;
+	margin-left: -850px;
+	background:url(../images/bg-screen-5.png) no-repeat;
+	background-size: cover;
+}
+
+/* screen6 */
+
+.screen6 {
+	width: 100%;
+	height: 250px;
+	background: url(../images/bg-screen-buy.png) no-repeat;
+	background-size: 120% 250px;
+	background-position: center;
+	position: relative;
+}
+
+.screen6_button {
+	width:200px;
+	height: 70px;
+	color: #fff;
+	background: red;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 18px;
+	line-height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	transition-property: transform,box-shadow ;
+	transition-duration: 1s;
+}
+
+.screen6_button:hover {
+	cursor: pointer;
+	box-shadow: 0 5px 5px 4px rgba(0,0,0,0.3);
+	transform: translate(0,-3px)
+}
+
+/* side bar */
+
+aside {
+	position: fixed;
+	right: 0;
+	top:50%;
+	width: 75px;
+	height: 204px;
+	margin-top: -102px;
+	padding: 0 5px;
+	background: #fff;
+	text-align: center;
+	display: none;
+	transition:opacity 1s;
+}
+
+.aside-item {
+	float: left;
+	width: 75px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 10px;
+	color: rgba(100,100,100,0.7);
+	border-bottom: 1px solid rgba(100,100,100,0.3);
+	transition:all 1s;
+}
+
+.aside-item-active {
+	color: red;
+}
+
+.aside-item:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.aside-item:last-child {
+	border-bottom: none;
+}
+
+/* footer */
+
+footer {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: rgb(7,17,27);
+	color: #fff;
+	font-size: 12px;
+}
