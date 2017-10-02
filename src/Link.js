@@ -31,6 +31,10 @@ const Link = React.createClass({
                     <h2>Contact</h2>
                     <div className="links-wrap row">
                         <div className="links-box col-6">
+                            
+
+                        </div>
+                        <div className="links-box col-6">
                             <a href="https://github.com/Joey-z-rp" target="_blank">
                                 <div className="links-icon github">
                                     <img src="./images/github.png" />
@@ -38,14 +42,27 @@ const Link = React.createClass({
                                         <ParticleImage width={200} height={200} url="./images/github.png" /> : null }
                                 </div>
                             </a>
-                            {/* <a href="https://www.linkedin.com/in/joey-zheng-13227214a/" target="_blank">
-                                <ParticleImage width={200} height={200} url="./images/linkedin.png" />
+                            <a href="https://www.linkedin.com/in/joey-yu-zheng/" target="_blank">
+                                <div className="links-icon linkedin">
+                                    <img src="./images/linkedin.png" />
+                                    {this.state.display === 'linkedin' ? 
+                                    <ParticleImage width={200} height={200} url="./images/linkedin.png" /> : null }
+                                </div>
                             </a>
                             <a href="https://codepen.io/Joey-z-rp/" target="_blank">
-                                <ParticleImage width={200} height={200} url="./images/codepen.png" />
-                            </a> */}
-                        </div>
-                        <div className="links-box col-6">
+                                <div className="links-icon codepen">
+                                    <img src="./images/codepen.png" />
+                                    {this.state.display === 'codepen' ? 
+                                    <ParticleImage width={200} height={200} url="./images/codepen.png" /> : null }
+                                </div>
+                            </a>
+                            <a href="product page/index.html" target="_blank">
+                                <div className="links-icon phone-demo">
+                                    <img src="./images/phone.png" />
+                                    {this.state.display === 'phone' ? 
+                                    <ParticleImage width={200} height={200} url="./images/phone.png" /> : null }
+                                </div>
+                            </a>
                             {/* <a href="product page/index.html" target="_blank">
                                 <ParticleImage width={200} height={200} url="./images/phone.png" />
                             </a>
@@ -65,8 +82,20 @@ function checkMouse(event){
     if(isMouseOn(mousePos, '.github')){
         this.setState({display: "github"});
     }
+    if(isMouseOn(mousePos, '.linkedin')){
+        this.setState({display: "linkedin"});
+    }
+    if(isMouseOn(mousePos, '.codepen')){
+        this.setState({display: "codepen"});
+    }
+    if(isMouseOn(mousePos, '.phone-demo')){
+        this.setState({display: "phone"});
+    }
 
-    if(!isMouseOn(mousePos, '.github')){
+    if(!isMouseOn(mousePos, '.github') && 
+        !isMouseOn(mousePos, '.linkedin') && 
+        !isMouseOn(mousePos, '.codepen') && 
+        !isMouseOn(mousePos, '.phone-demo')){
         this.setState({display: "none"});
     }
 }

@@ -258,6 +258,7 @@ body {
                 width: 200px;
                 height: 200px;
                 position: relative;
+                float: left;
 
                 img {
                     
@@ -265,7 +266,7 @@ body {
                     height: 100%;
                     &:hover {
                         opacity: 0;
-                        transition: all 0.7s linear;
+                        transition: all 0.5s linear;
                     }
                 }
                 .particle-image {
