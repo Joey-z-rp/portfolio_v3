@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ParticleImage from './ParticleImage';
 import NavMenu from './NavMenu';
 
+let handleMouseCheck=null;
 
 const Link = React.createClass({
     
@@ -18,11 +19,12 @@ const Link = React.createClass({
         },
     
         componentDidMount(){
-            window.addEventListener('mousemove', checkMouse.bind(this));
+            window.addEventListener('mousemove', handleMouseCheck=checkMouse.bind(this));
         },
     
         componentWillUnmount(){
-
+            console.log('unmount link')
+            window.removeEventListener('mousemove',handleMouseCheck);
         },
     
         render: function(){
@@ -35,40 +37,38 @@ const Link = React.createClass({
 
                         </div>
                         <div className="links-box col-6">
-                            <a href="https://github.com/Joey-z-rp" target="_blank">
-                                <div className="links-icon github">
-                                    <img src="./images/github.png" />
-                                    {this.state.display === 'github' ? 
-                                        <ParticleImage width={200} height={200} url="./images/github.png" /> : null }
-                                </div>
-                            </a>
-                            <a href="https://www.linkedin.com/in/joey-yu-zheng/" target="_blank">
-                                <div className="links-icon linkedin">
-                                    <img src="./images/linkedin.png" />
-                                    {this.state.display === 'linkedin' ? 
-                                    <ParticleImage width={200} height={200} url="./images/linkedin.png" /> : null }
-                                </div>
-                            </a>
-                            <a href="https://codepen.io/Joey-z-rp/" target="_blank">
-                                <div className="links-icon codepen">
-                                    <img src="./images/codepen.png" />
-                                    {this.state.display === 'codepen' ? 
-                                    <ParticleImage width={200} height={200} url="./images/codepen.png" /> : null }
-                                </div>
-                            </a>
-                            <a href="product page/index.html" target="_blank">
-                                <div className="links-icon phone-demo">
-                                    <img src="./images/phone.png" />
-                                    {this.state.display === 'phone' ? 
-                                    <ParticleImage width={200} height={200} url="./images/phone.png" /> : null }
-                                </div>
-                            </a>
-                            {/* <a href="product page/index.html" target="_blank">
-                                <ParticleImage width={200} height={200} url="./images/phone.png" />
-                            </a>
-                            <a href="#" target="_blank">
-                                <ParticleImage width={200} height={200} url="./images/facebook.png" />
-                            </a> */}
+                            <div className="row">
+                                <a className="col-6" href="https://github.com/Joey-z-rp" target="_blank">
+                                    <div className="links-icon github">
+                                        <img src="./images/github.png" />
+                                        {this.state.display === 'github' ? 
+                                            <ParticleImage width={200} height={200} url="./images/github.png" /> : null }
+                                    </div>
+                                </a>
+                                <a className="col-6" href="https://www.linkedin.com/in/joey-yu-zheng/" target="_blank">
+                                    <div className="links-icon linkedin">
+                                        <img src="./images/linkedin.png" />
+                                        {this.state.display === 'linkedin' ? 
+                                        <ParticleImage width={200} height={200} url="./images/linkedin.png" /> : null }
+                                    </div>
+                                </a>
+                            </div>
+                            <div className="row">
+                                <a className="col-6" href="https://codepen.io/Joey-z-rp/" target="_blank">
+                                    <div className="links-icon codepen">
+                                        <img src="./images/codepen.png" />
+                                        {this.state.display === 'codepen' ? 
+                                        <ParticleImage width={200} height={200} url="./images/codepen.png" /> : null }
+                                    </div>
+                                </a>
+                                <a className="col-6" href="product page/index.html" target="_blank">
+                                    <div className="links-icon phone-demo">
+                                        <img src="./images/phone.png" />
+                                        {this.state.display === 'phone' ? 
+                                        <ParticleImage width={200} height={200} url="./images/phone.png" /> : null }
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <NavMenu handleTurn={this.props.handleTurn} currentPage="link"/>
