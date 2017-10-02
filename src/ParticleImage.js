@@ -20,7 +20,7 @@ const ParticleImage = React.createClass({
         let image = this.img;
         let width = this.props.width;
         let height = this.props.height;
-        setTimeout(() => {particleImage(canvas, image, width, height)},1200);
+        setTimeout(() => {particleImage(canvas, image, width, height)},0);
 	},
 	
 	componentWillUnmount(){

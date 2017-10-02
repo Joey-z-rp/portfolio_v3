@@ -3,42 +3,113 @@ import PropTypes from 'prop-types';
 import ParticleImage from './ParticleImage';
 import NavMenu from './NavMenu';
 
-const Link = props => {
-    return (
-        <div className="link" style={props.styleContent}>
-            <h2>Contact</h2>
-            <div className="links-wrap row">
-                <div className="links-box col-6">
-                    <a href="https://github.com/Joey-z-rp" target="_blank">
-                        <div className="links-icon">
-                            <img src="./images/github.png" />
-                            <ParticleImage width={200} height={200} url="./images/github.png" />
-                        </div>
-                    </a>
-                    {/* <a href="https://www.linkedin.com/in/joey-zheng-13227214a/" target="_blank">
-                        <ParticleImage width={200} height={200} url="./images/linkedin.png" />
-                    </a>
-                    <a href="https://codepen.io/Joey-z-rp/" target="_blank">
-                        <ParticleImage width={200} height={200} url="./images/codepen.png" />
-                    </a> */}
-                </div>
-                <div className="links-box col-6">
-                    {/* <a href="product page/index.html" target="_blank">
-                        <ParticleImage width={200} height={200} url="./images/phone.png" />
-                    </a>
-                    <a href="#" target="_blank">
-                        <ParticleImage width={200} height={200} url="./images/facebook.png" />
-                    </a> */}
-                </div>
-            </div>
-            <NavMenu handleTurn={props.handleTurn} currentPage="link"/>
-        </div>
-    );
-};
 
-Link.ProtoTypes = {
-    handleTurn: PropTypes.func.isRequired,
-    styleContent: PropTypes.object.isRequired
-};
+const Link = React.createClass({
+    
+        protoTypes : {
+            handleTurn: PropTypes.func.isRequired,
+            styleContent: PropTypes.object.isRequired
+        },
+
+        getInitialState: function(){
+            return {
+                display: 'none',
+            };
+        },
+    
+        componentDidMount(){
+            window.addEventListener('mousemove', checkMouse.bind(this));
+        },
+    
+        componentWillUnmount(){
+
+        },
+    
+        render: function(){
+            return (
+                <div className="link" style={this.props.styleContent}>
+                    <h2>Contact</h2>
+                    <div className="links-wrap row">
+                        <div className="links-box col-6">
+                            <a href="https://github.com/Joey-z-rp" target="_blank">
+                                <div className="links-icon github">
+                                    <img src="./images/github.png" />
+                                    {this.state.display === 'github' ? 
+                                        <ParticleImage width={200} height={200} url="./images/github.png" /> : null }
+                                </div>
+                            </a>
+                            {/* <a href="https://www.linkedin.com/in/joey-zheng-13227214a/" target="_blank">
+                                <ParticleImage width={200} height={200} url="./images/linkedin.png" />
+                            </a>
+                            <a href="https://codepen.io/Joey-z-rp/" target="_blank">
+                                <ParticleImage width={200} height={200} url="./images/codepen.png" />
+                            </a> */}
+                        </div>
+                        <div className="links-box col-6">
+                            {/* <a href="product page/index.html" target="_blank">
+                                <ParticleImage width={200} height={200} url="./images/phone.png" />
+                            </a>
+                            <a href="#" target="_blank">
+                                <ParticleImage width={200} height={200} url="./images/facebook.png" />
+                            </a> */}
+                        </div>
+                    </div>
+                    <NavMenu handleTurn={this.props.handleTurn} currentPage="link"/>
+                </div>
+            );
+        }
+    });
+
+function checkMouse(event){
+    const mousePos = getMousePos(event);
+    if(isMouseOn(mousePos, '.github')){
+        this.setState({display: "github"});
+    }
+
+    if(!isMouseOn(mousePos, '.github')){
+        this.setState({display: "none"});
+    }
+}
+
+function isMouseOn(mousePos, className){
+    const x = mousePos.x;
+    const y = mousePos.y;
+    const top = getElementPos(className).top;
+    const bottom = getElementPos(className).bottom;
+    const left = getElementPos(className).left;
+    const right = getElementPos(className).right;
+    if(x > left && x < right && y > top && y < bottom){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function getElementPos(className){
+    const element = document.querySelector(className);
+    return element.getBoundingClientRect();
+}
+
+function getMousePos(e){
+    let posx = 0;
+    let posy = 0;
+    if (!e) {let e = window.event};
+    if (e.pageX || e.pageY) 	{
+        posx = e.pageX;
+        posy = e.pageY;
+    }
+    else if (e.clientX || e.clientY) 	{
+        posx = e.clientX + document.body.scrollLeft
+            + document.documentElement.scrollLeft;
+        posy = e.clientY + document.body.scrollTop
+            + document.documentElement.scrollTop;
+    }
+    return {
+        x : posx,
+        y : posy
+    };
+}
+
+
 
 export default Link;
