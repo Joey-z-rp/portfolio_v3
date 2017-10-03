@@ -84,7 +84,8 @@ body {
       background-color: #C7112F; }
 
 .about {
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #000; }
   .about .video-layer {
     width: 100%;
     height: 100%;
@@ -407,8 +408,6 @@ body {
       width: 11rem !important;
       height: 11rem !important; } }
 @media screen and (max-width: 768px) {
-  html .about {
-    background-color: #000; }
   html .skill {
     background-position-x: -100px; }
     html .skill .loadingCircle {
