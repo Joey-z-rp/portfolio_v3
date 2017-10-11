@@ -20,7 +20,7 @@ const HomePage = React.createClass({
           typing2: false,
           typing3: false,
           typing4: false,
-          showButton: true,
+          showButton: false,
         };
     },
 
@@ -56,6 +56,7 @@ const HomePage = React.createClass({
     render: function(){
         return (
             <div className="home" style={this.props.styleContent} ref={ (div) => this.div = div}>
+                <button className="skip" onClick={() => {this.props.handleTurn("home", "about")}}>Skip</button>
                 { this.state.typing1 ? <Typist 
                     className="typing-animation-1 typing-animation"
                     startDelay={1000} 
