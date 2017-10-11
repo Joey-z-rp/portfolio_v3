@@ -60,7 +60,7 @@ const HomePage = React.createClass({
                 { this.state.typing1 ? <Typist 
                     className="typing-animation-1 typing-animation"
                     startDelay={1000} 
-                    avgTypingDelay={60} 
+                    avgTypingDelay={40} 
                     stdTypingDelay={80} 
                     cursor={{
                         show: true,
@@ -104,7 +104,7 @@ const HomePage = React.createClass({
                 { this.state.typing2 ? <Typist 
                     className="typing-animation-2 typing-animation"
                     startDelay={500} 
-                    avgTypingDelay={50} 
+                    avgTypingDelay={40} 
                     stdTypingDelay={80} 
                     cursor={{
                         show: true,
@@ -133,7 +133,7 @@ const HomePage = React.createClass({
                 { this.state.typing3 ? <Typist 
                     className="typing-animation-3 typing-animation"
                     startDelay={1000} 
-                    avgTypingDelay={70} 
+                    avgTypingDelay={40} 
                     stdTypingDelay={80} 
                     cursor={{
                         show: true,
