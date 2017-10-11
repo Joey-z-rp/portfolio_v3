@@ -43,10 +43,19 @@ body {
     font-family: 'Indie Flower', cursive;
 
     .skip {
+        width: 4rem;
+        height: 4rem;
         background-color: #000;
-        border:none;
+        border:1px solid #fff;
         color:#fff;
-        
+        border-radius: 50%;
+        font-size: 2rem;
+        &::after {
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 4rem;
+        }
     }
 
     .typing-animation {
