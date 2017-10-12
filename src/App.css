@@ -234,14 +234,14 @@ body {
     margin: auto;
     font-size: 1.9rem;
     text-align: center;
-    padding-top: 1.3rem;
+    padding-top: 0;
     position: absolute;
     top: 50%;
     left: 0;
     right: 0;
-    transform: translateY(-50%); }
+    transform: translateY(-55%); }
     .link .links-wrap .links-box .prompt-box, .link .links-wrap .links-box .email-box, .link .links-wrap .links-box .map-box {
-      margin-top: 3rem;
+      margin-top: 1.5rem;
       color: #fff; }
       .link .links-wrap .links-box .prompt-box a, .link .links-wrap .links-box .email-box a, .link .links-wrap .links-box .map-box a {
         text-decoration: none;
@@ -258,7 +258,7 @@ body {
         width: 80%;
         height: 100%; }
     .link .links-wrap .links-box .row {
-      margin-top: 4rem; }
+      margin-top: 2rem; }
     .link .links-wrap .links-box .links-icon {
       width: 13rem;
       height: 13rem;
@@ -283,8 +283,10 @@ body {
 .navigation {
   position: fixed;
   bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%); }
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
   .navigation .btn-navigation {
     font-family: 'Fjalla One', sans-serif;
     font-size: 1.5rem;
@@ -295,7 +297,7 @@ body {
     width: 8rem;
     height: 3rem;
     line-height: 3rem;
-    margin-right: 1rem;
+    margin: 0 0.5rem;
     cursor: pointer;
     transition: all 0.4s ease;
     opacity: 0.6;
@@ -453,13 +455,10 @@ body {
       width: 60px !important;
       height: 60px !important; } }
 @media screen and (max-width: 480px) {
-  html .home .button-wrapper {
-    bottom: 20% !important;
-    flex-wrap: wrap; }
-    html .home .button-wrapper div {
-      width: 100%;
-      text-align: center;
-      padding-top: 20px; }
+  html .home .typing-animation {
+    padding-top: 5rem;
+    margin-top: 3rem;
+    width: 80%; }
   html .about video {
     width: 200%; }
   html .my-bio {
@@ -467,11 +466,14 @@ body {
     height: 140px !important; }
   html .skill {
     background-position-x: -200px; }
-    html .skill .skill-pic {
-      width: 50px !important;
-      height: 50px !important; }
-  html .link {
-    background-position-x: -300px; } }
+  html .skill-pic {
+    width: 50px !important;
+    height: 50px !important; }
+
+  .link {
+    background-position-x: -300px; }
+    .link .links-box {
+      padding: 4rem 0 2rem 0; } }
 @media screen and (max-width: 375px) {
   html {
     font-size: 8px; }

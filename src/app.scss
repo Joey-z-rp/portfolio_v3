@@ -332,17 +332,17 @@ body {
         margin: auto;
         font-size: 1.9rem;
         text-align: center;
-        padding-top: 1.3rem;
+        padding-top: 0;
         position: absolute;
         top: 50%;
         left: 0;
         right: 0;
-        transform: translateY(-50%);
+        transform: translateY(-55%);
 
 
         .links-box {
             .prompt-box, .email-box, .map-box {
-                margin-top: 3rem;
+                margin-top: 1.5rem;
                 color: #fff;
                 a {
                     text-decoration: none;
@@ -367,7 +367,7 @@ body {
                 }
             }
             .row {
-                margin-top: 4rem;
+                margin-top: 2rem;
             }
             .links-icon {
                 width: 13rem;
@@ -405,8 +405,10 @@ body {
 .navigation {
     position: fixed;
     bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    width:100%;
+    display: flex;
+    justify-content: center;
  
     .btn-navigation {
         font-family: 'Fjalla One', sans-serif;
@@ -418,7 +420,7 @@ body {
         width: 8rem;
         height: 3rem;
         line-height: 3rem;
-        margin-right: 1rem;
+        margin: 0 0.5rem;
         cursor: pointer;
         transition: all 0.4s ease;
         opacity: 0.6;
@@ -681,15 +683,12 @@ body {
 @media screen and (max-width: 480px) {
 	html {
         .home {
-            .button-wrapper{
-                bottom: 20%!important;
-                flex-wrap: wrap;
-                div {
-                    width: 100%;
-                    text-align: center;
-                    padding-top: 20px;
-                }
+            .typing-animation {
+                padding-top: 5rem;
+                margin-top: 3rem;
+                width: 80%;
             }
+            
         }
         .about {
             video {
@@ -702,6 +701,7 @@ body {
         }
         .skill {
             background-position-x: -200px;
+            }
             .skill-pic {
                 width: 50px!important;
                 height: 50px!important;
@@ -709,6 +709,8 @@ body {
         }
         .link {
             background-position-x: -300px;
+            .links-box {
+                padding: 4rem 0 2rem 0; 
         }
 	}
 }
