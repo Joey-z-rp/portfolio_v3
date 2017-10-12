@@ -62,7 +62,6 @@ const Skill = React.createClass({
                         <div className="row skill-box">
                             <div className="skill-set-left col-md-6">
                                 <div className="html5 skill-pic" onClick={() => this.displayRating('html')} >
-                                    <img src="./images/html.png" />
                                 </div>
                                 <div className="css3 skill-pic" onClick={() => this.displayRating('css')} >
                                     <img src="./images/css.png" />

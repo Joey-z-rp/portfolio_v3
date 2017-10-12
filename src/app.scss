@@ -211,13 +211,27 @@ body {
                 padding-top: 20px;
             }
         }
+        
+        .html5 {
+            background-image: url(./images/html.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-html.png);
+            }
+        }
 
+        .html5 {
+            background-image: url(./images/html.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-html.png);
+            }
+        }
         .skill-pic {
             width: 100px;
             height: 100px;
             float: left;
             margin: 1rem;
-            opacity: 0.8;
             transition: all 0.5s;
             cursor: pointer;
             animation: shake 5s infinite linear;
@@ -228,7 +242,6 @@ body {
             }
 
             &:hover {
-                opacity: 1;
                 transform: scale(1.2);
                 animation: pause;
             }
