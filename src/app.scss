@@ -53,49 +53,6 @@ body {
         top: 7rem;
         line-height: 5rem;
     }
-
-    .button-wrapper {
-        width: 100%;
-        position: absolute;
-        bottom: 30%;
-        display: flex;
-        justify-content: space-around;
-
-        button {
-            display: inline-block;
-            border-radius: 9px;
-            width: 15rem;
-            height: 5rem;
-            font-family: 'Indie Flower', cursive;
-            font-size: 2rem;
-            background-color: #2B8AE9;
-            cursor: pointer;
-            transition: all 0.1s linear;
-        }
-        
-        .yes{
-            position: relative;
-        }
-        .yes:hover {
-            background-color: #24D62D;
-        }
-        .yes::after {
-            content: "";
-            display: block;
-            width: 50px;
-            height: 50px;
-            background-image: url(./images/finger.png);
-            background-size: cover;
-            position: absolute;
-            left: -60px;
-            top: 0;
-            animation: pointing 1s infinite linear;
-        }
-
-        .no:hover {
-            background-color: #C7112F;
-        }
-    }
 }
 
 
@@ -211,14 +168,6 @@ body {
                 padding-top: 20px;
             }
         }
-        
-        .html5 {
-            background-image: url(./images/html.png);
-            background-size: cover;
-            &:hover {
-                background-image: url(./images/c-html.png);
-            }
-        }
 
         .html5 {
             background-image: url(./images/html.png);
@@ -227,6 +176,112 @@ body {
                 background-image: url(./images/c-html.png);
             }
         }
+
+        .css3 {
+            background-image: url(./images/css.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-css.png);
+            }
+        }
+
+        .javascript {
+            background-image: url(./images/javascript.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-javascript.png);
+            }
+        }
+
+        .git {
+            background-image: url(./images/git.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-git.png);
+            }
+        }
+
+        .react {
+            background-image: url(./images/react.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-react.png);
+            }
+        }
+
+        .bootstrap {
+            background-image: url(./images/bootstrap.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-bootstrap.png);
+            }
+        }
+
+        .jquery {
+            background-image: url(./images/jquery.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-jquery.png);
+            }
+        }
+
+        .sass {
+            background-image: url(./images/sass.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-sass.png);
+            }
+        }
+
+        .ruby {
+            background-image: url(./images/ruby.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-ruby.png);
+            }
+        }
+
+        .node {
+            background-image: url(./images/node.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-node.png);
+            }
+        }
+
+        .c-sharp {
+            background-image: url(./images/c-sharp.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-c-sharp.png);
+            }
+        }
+
+        .rails {
+            background-image: url(./images/rails.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-rails.png);
+            }
+        }
+
+        .asp-net {
+            background-image: url(./images/asp-net.png);
+            background-size: 100%;
+            background-repeat: no-repeat; 
+            &:hover {
+                background-image: url(./images/c-asp-net.png);
+            }
+        }
+
+        .wordpress {
+            background-image: url(./images/wordpress.png);
+            background-size: cover;
+            &:hover {
+                background-image: url(./images/c-wordpress.png);
+            }
+        }
+
         .skill-pic {
             width: 100px;
             height: 100px;

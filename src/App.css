@@ -38,39 +38,6 @@ body {
   .home .typing-animation-1 {
     top: 7rem;
     line-height: 5rem; }
-  .home .button-wrapper {
-    width: 100%;
-    position: absolute;
-    bottom: 30%;
-    display: flex;
-    justify-content: space-around; }
-    .home .button-wrapper button {
-      display: inline-block;
-      border-radius: 9px;
-      width: 15rem;
-      height: 5rem;
-      font-family: 'Indie Flower', cursive;
-      font-size: 2rem;
-      background-color: #2B8AE9;
-      cursor: pointer;
-      transition: all 0.1s linear; }
-    .home .button-wrapper .yes {
-      position: relative; }
-    .home .button-wrapper .yes:hover {
-      background-color: #24D62D; }
-    .home .button-wrapper .yes::after {
-      content: "";
-      display: block;
-      width: 50px;
-      height: 50px;
-      background-image: url(./images/finger.png);
-      background-size: cover;
-      position: absolute;
-      left: -60px;
-      top: 0;
-      animation: pointing 1s infinite linear; }
-    .home .button-wrapper .no:hover {
-      background-color: #C7112F; }
 
 .about {
   overflow: hidden;
@@ -164,11 +131,72 @@ body {
       background-size: cover; }
       .skill .skill-set-wrap .html5:hover {
         background-image: url(./images/c-html.png); }
-    .skill .skill-set-wrap .html5 {
-      background-image: url(./images/html.png);
+    .skill .skill-set-wrap .css3 {
+      background-image: url(./images/css.png);
       background-size: cover; }
-      .skill .skill-set-wrap .html5:hover {
-        background-image: url(./images/c-html.png); }
+      .skill .skill-set-wrap .css3:hover {
+        background-image: url(./images/c-css.png); }
+    .skill .skill-set-wrap .javascript {
+      background-image: url(./images/javascript.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .javascript:hover {
+        background-image: url(./images/c-javascript.png); }
+    .skill .skill-set-wrap .git {
+      background-image: url(./images/git.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .git:hover {
+        background-image: url(./images/c-git.png); }
+    .skill .skill-set-wrap .react {
+      background-image: url(./images/react.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .react:hover {
+        background-image: url(./images/c-react.png); }
+    .skill .skill-set-wrap .bootstrap {
+      background-image: url(./images/bootstrap.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .bootstrap:hover {
+        background-image: url(./images/c-bootstrap.png); }
+    .skill .skill-set-wrap .jquery {
+      background-image: url(./images/jquery.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .jquery:hover {
+        background-image: url(./images/c-jquery.png); }
+    .skill .skill-set-wrap .sass {
+      background-image: url(./images/sass.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .sass:hover {
+        background-image: url(./images/c-sass.png); }
+    .skill .skill-set-wrap .ruby {
+      background-image: url(./images/ruby.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .ruby:hover {
+        background-image: url(./images/c-ruby.png); }
+    .skill .skill-set-wrap .node {
+      background-image: url(./images/node.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .node:hover {
+        background-image: url(./images/c-node.png); }
+    .skill .skill-set-wrap .c-sharp {
+      background-image: url(./images/c-sharp.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .c-sharp:hover {
+        background-image: url(./images/c-c-sharp.png); }
+    .skill .skill-set-wrap .rails {
+      background-image: url(./images/rails.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .rails:hover {
+        background-image: url(./images/c-rails.png); }
+    .skill .skill-set-wrap .asp-net {
+      background-image: url(./images/asp-net.png);
+      background-size: 100%;
+      background-repeat: no-repeat; }
+      .skill .skill-set-wrap .asp-net:hover {
+        background-image: url(./images/c-asp-net.png); }
+    .skill .skill-set-wrap .wordpress {
+      background-image: url(./images/wordpress.png);
+      background-size: cover; }
+      .skill .skill-set-wrap .wordpress:hover {
+        background-image: url(./images/c-wordpress.png); }
     .skill .skill-set-wrap .skill-pic {
       width: 100px;
       height: 100px;
