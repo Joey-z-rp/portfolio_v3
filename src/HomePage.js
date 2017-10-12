@@ -3,6 +3,7 @@ import ReactDOM from 'react';
 import PropTypes from 'prop-types';
 import Typist from 'react-typist';
 import HomePageBackground from './HomePageBackground';
+import NavMenu from './NavMenu';    
 
 
 const HomePage = React.createClass({
@@ -56,12 +57,11 @@ const HomePage = React.createClass({
     render: function(){
         return (
             <div className="home" style={this.props.styleContent} ref={ (div) => this.div = div}>
-                <button className="skip" onClick={() => {this.props.handleTurn("home", "about")}}>Skip</button>
-                { this.state.typing1 ? <Typist 
+                <Typist 
                     className="typing-animation-1 typing-animation"
-                    startDelay={1000} 
-                    avgTypingDelay={40} 
-                    stdTypingDelay={80} 
+                    startDelay={500} 
+                    avgTypingDelay={30} 
+                    stdTypingDelay={50} 
                     cursor={{
                         show: true,
                         blink: true,
@@ -72,19 +72,13 @@ const HomePage = React.createClass({
                     delayGenerator={
                         function(mean, std, {line, lineIdx, charIdx, defDelayGenerator}) {
                         if (lineIdx === 0 && charIdx === line.length - 1) {
-                            return 500;
+                            return 200;
                         }
                         if (lineIdx === 1 && charIdx === line.length - 1) {
-                            return 500;
+                            return 200;
                         }
                         if (lineIdx === 2 && charIdx === line.length - 1) {
-                            return 500;
-                        }
-                        if (lineIdx === 3 && charIdx === line.length - 1) {
-                            return 500;
-                        }
-                        if (lineIdx === 4 && charIdx === line.length - 1) {
-                            return 500;
+                            return 200;
                         }
                         return defDelayGenerator();
                         }
@@ -92,106 +86,13 @@ const HomePage = React.createClass({
                     onTypingDone={function(){ this.onAnimationFinish(1) }.bind(this)} >
                     Hello there!
                     <br />
-                    Welcome to my space.
+                    My name is Joey, an enthusiastic web developer.
                     <br />
-                    How are you going today?
-                    <br />
-                    Nice weather, isn't it?
-                    <br/>
-                    Alright, alright, done with chitchat.
-                </Typist> : null }
-
-                { this.state.typing2 ? <Typist 
-                    className="typing-animation-2 typing-animation"
-                    startDelay={500} 
-                    avgTypingDelay={40} 
-                    stdTypingDelay={80} 
-                    cursor={{
-                        show: true,
-                        blink: true,
-                        element: '▌',
-                        hideWhenDone: false,
-                        hideWhenDoneDelay: 1000,
-                    }} 
-                    delayGenerator={
-                        function(mean, std, {line, lineIdx, charIdx, defDelayGenerator}) {
-                        if (lineIdx === 0 && charIdx === line.length - 1) {
-                            return 1000;
-                        }
-                        if (lineIdx === 1 && charIdx === line.length - 1) {
-                            return 1000;
-                        }
-                        return defDelayGenerator();
-                        }
-                    } 
-                    onTypingDone={function(){ this.onAnimationFinish(2) }.bind(this)} >
-                    My name is Joey,&nbsp;
-                    <br />
-                    an enthusiastic web developer.
-                </Typist> : null }
-
-                { this.state.typing3 ? <Typist 
-                    className="typing-animation-3 typing-animation"
-                    startDelay={1000} 
-                    avgTypingDelay={40} 
-                    stdTypingDelay={80} 
-                    cursor={{
-                        show: true,
-                        blink: true,
-                        element: '▌',
-                        hideWhenDone: false,
-                        hideWhenDoneDelay: 1000,
-                    }} 
-                    delayGenerator={
-                        function(mean, std, {line, lineIdx, charIdx, defDelayGenerator}) {
-                        if (lineIdx === 0 && charIdx === line.length - 1) {
-                            return 1000;
-                        }
-                        return defDelayGenerator();
-                        }
-                    } 
-                    onTypingDone={function(){ 
-                        this.setState({
-                            showButton: true
-                        }); 
-                    }.bind(this)} >
-                    Would you like to know more about me?
-                </Typist> : null }
+                    I am a fast learner and am looking for an opportunity to prove myself.
+                </Typist>
 
                 <HomePageBackground width={this.props.width} height={this.props.height}/>
-                { this.state.showButton ? 
-                    <div className="button-wrapper">
-                        <div>
-                            <button className="yes" onClick={() => {this.props.handleTurn("home", "about")}}>Yes, please.</button>
-                        </div>
-                        <div>
-                            <button className="no" onClick={this.goodbye}>No, thanks.</button>
-                        </div>
-                    </div>
-                     : null }
-
-                { this.state.typing4 ? <Typist 
-                    className="typing-animation-4 typing-animation"
-                    startDelay={1000} 
-                    avgTypingDelay={80} 
-                    stdTypingDelay={80} 
-                    cursor={{
-                        show: true,
-                        blink: true,
-                        element: '▌',
-                        hideWhenDone: false,
-                        hideWhenDoneDelay: 1000,
-                    }} 
-                    delayGenerator={
-                        function(mean, std, {line, lineIdx, charIdx, defDelayGenerator}) {
-                        if (lineIdx === 0 && charIdx === line.length - 1) {
-                            return 1000;
-                        }
-                        return defDelayGenerator();
-                        }
-                    }  >
-                    No worries, bye!
-                </Typist> : null }
+                <NavMenu handleTurn={this.props.handleTurn} currentPage="home"/>
             </div>
         );
     }

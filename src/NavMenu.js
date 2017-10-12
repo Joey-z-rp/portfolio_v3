@@ -4,21 +4,26 @@ import PropTypes from 'prop-types';
 const NavMenu = props => {
     return (
         <div className="navigation">
-            { props.currentPage === "about" ? null : <button 
+            <button 
+                className="button-about btn-navigation" 
+                onClick={() => {props.handleTurn(props.currentPage, "home")}}>
+                Home
+            </button>
+            <button 
                 className="button-about btn-navigation" 
                 onClick={() => {props.handleTurn(props.currentPage, "about")}}>
                 About Me
-            </button> }
-            { props.currentPage === "skill" ? null : <button 
+            </button>
+            <button 
                 className="button-skill btn-navigation" 
                 onClick={() => {props.handleTurn(props.currentPage, "skill")}}>
                 Skillset
-            </button> }
-            { props.currentPage === "link" ? null : <button 
+            </button>
+            <button 
                 className="button-link btn-navigation" 
                 onClick={() => {props.handleTurn(props.currentPage, "link")}}>
                 Contact
-            </button> }
+            </button>
         </div>
     );
 };
